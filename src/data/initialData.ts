@@ -3,292 +3,586 @@ import { parseReportText } from '../utils/reportParser';
 
 export const INITIAL_PERSONS: Person[] = [
   {
-    id: 'p-1',
-    name: 'Nursena Harput',
-    email: 'nursena.harput@mesam.org.tr',
-    department: 'Dokümantasyon & Reprodüksiyon',
-    title: 'Kıdemli Dokümantasyon Uzmanı',
-    primaryDuties: [
-      'Pelikan Müzik CWR güncelleme, kontrol ve ACK yükleme',
-      'Dizi & film cue-sheet kontrolü ve sisteme girişi',
-      'Pelikan sözleşme ve agreement (AGR) girişleri',
-      'Pelikan künye açma ve eser kontrolü',
+    "id": "p-sena",
+    "name": "Sena Uğurlu",
+    "email": "sena.ugurlu@mesam.org.tr",
+    "department": "Telif & Üye Bildirimleri",
+    "title": "Eser Kayıt & TBK Bildirimleri Sorumlusu",
+    "specialRoleOrDuty": "TBK Bildirimleri (Üye Bildirimleri, Kararlar vb.)",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "WEDIACORP",
+      "FATIH ALP",
+      "ETL",
+      "ARTVIZYON",
+      "NK",
+      "KEMAL FARUK",
+      "GLOBAL EDISYON YAY. SOZ.",
+      "NOTAVERA"
     ],
-    secondaryDuties: [
-      'Unknown film ve dizi kayıtları oluşturma',
-      'Çakışma durumundaki eserlerin e-posta yazışmaları',
-      'Genel process desteği',
+    "primaryDuties": [
+      "TBK (Türk Borçlar Kanunu) bildirimleri, üye bildirimleri ve kararların incelenmesi ve takibi",
+      "Wediacorp, Fatih Alp, ETL, Artvizyon, NK, Kemal Faruk, Global Edisyon, Notavera edisyon süreçleri",
+      "Eser bildirimlerinin sisteme kaydı ve doğrulanması",
+      "Üye portalından gelen bildirimlerin kontrolü ve onay süreci"
     ],
-    specialExpertise: ['Pelikan Kataloğu', 'Dizi/Film Cue-sheet', 'CWR Formatı'],
-    assignedPublishers: ['Pelikan', 'Disney'],
-    targetDailyProcess: 50,
-    targetDailyCueSheet: 15,
-    targetDailyEser: 30,
-    notes: 'Pelikan edisyonunun tüm yerli ve yabancı telif eşleştirmelerinden birincil sorumlu.',
+    "secondaryDuties": [
+      "Dijital platform eser eşleştirme desteği",
+      "Telefon ve çağrı merkezi bildirim yönlendirmeleri"
+    ],
+    "specialExpertise": [
+      "TBK Mevzuatı",
+      "Üye Bildirimleri & Kararlar",
+      "Wediacorp Edisyonu",
+      "Notavera"
+    ],
+    "targetDailyProcess": 40,
+    "targetDailyCueSheet": 10,
+    "targetDailyEser": 35,
+    "notes": "Resmi Görev: TBK Bildirimleri sorumlusu ve 8 edisyonun birincil takipçisi."
   },
   {
-    id: 'p-2',
-    name: 'Gizem Kurtoğlu',
-    email: 'gizem.kurtoglu@mesam.org.tr',
-    department: 'Hukuk & Eser Tescil Birimi',
-    title: 'Telif İnceleme & Eser Tescil Uzmanı',
-    primaryDuties: [
-      'Eser bildirimi ve sisteme kayıt işlemleri',
-      'Dilekçe inceleme ve yasal süreçler (TBK, mahkeme bilirkişi incelemeleri)',
-      'Dağıtım ve mekanikten gelen sorunlu eser tespit ve çözümleri',
-      'CISNET ve ISWC kod araştırma ve alma çalışmaları',
+    "id": "p-gizem",
+    "name": "Gizem Kurtoğlu",
+    "email": "gizem.kurtoglu@mesam.org.tr",
+    "department": "Hukuk & Eser Tescil Birimi",
+    "title": "Telif İnceleme & Üye Dilekçeleri Uzmanı",
+    "specialRoleOrDuty": "Üye Dilekçeleri İnceleme & Hukuki Süreçler",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "ILS",
+      "DINAZOR",
+      "ARCADIA ENTERTAINMENT MUZIK VE BELGESEL PAZARLAMA LTD STI",
+      "KARA MUZIK EDISYON LIMITED SIRKETI",
+      "ZOO TURIZM",
+      "DINAZOR BOYAMA SANATLARI",
+      "SAYANORA",
+      "GUVERCIN MUZIK EDISYON"
     ],
-    secondaryDuties: [
-      'Yeni üyelik listeleri ve local eser tespiti',
-      'Call center ve üye ilişkileri sorunlu bildirim koordinasyonu',
-      'Cue-sheet tescil ve numara aktarımları (Macaristan vb.)',
+    "primaryDuties": [
+      "Tüm üye dilekçelerinin incelenmesi, hukuki değerlendirme ve cevaplanması",
+      "ILS, Dinazor, Arcadia Entertainment, Kara Müzik, Zoo Turizm, Sayanora, Güvercin Müzik edisyon yönetimi",
+      "Dağıtım ve mekanik teliften gelen ihtilaflı ve çakışmalı eser çözümleri",
+      "CISNET ve ISWC kod araştırma ve tescil işlemleri"
     ],
-    specialExpertise: ['TBK Mevzuatı & Hukuk', 'ISWC / CISNET', 'Çakışmalı / Sorunlu Eserler', 'Dilekçe Değerlendirme'],
-    assignedPublishers: ['Genel Repertuar', 'Universal'],
-    targetDailyProcess: 20,
-    targetDailyCueSheet: 10,
-    targetDailyEser: 45,
-    notes: 'Hukuki ihtilaflı eserler, mahkeme tespitleri ve üye dilekçelerinde birincil uzman.',
+    "secondaryDuties": [
+      "Mahkeme ve resmi kurum bilirkişi dilekçe dosyaları hazırlığı",
+      "Üye ilişkileri ile koordineli sorunlu hak sahipliği tespitleri"
+    ],
+    "specialExpertise": [
+      "Üye Dilekçeleri",
+      "Hukuki İhtilaflar",
+      "ISWC/CISNET",
+      "ILS & Dinazor Edisyonları"
+    ],
+    "targetDailyProcess": 25,
+    "targetDailyCueSheet": 10,
+    "targetDailyEser": 45,
+    "notes": "Resmi Görev: Birim genelindeki tüm üye dilekçeleri ve 8 edisyondan sorumlu."
   },
   {
-    id: 'p-3',
-    name: 'Emrah Kurtoğlu',
-    email: 'emrah.kurtoglu@mesam.org.tr',
-    department: 'Dış İlişkiler & Edisyon',
-    title: 'Uluslararası Edisyon & CWR Sorumlusu',
-    primaryDuties: [
-      'Median Müzik CWR eşleştirme, güncellemeleri ve raporlamaları',
-      'Yabancı agreemant (AGM) sözleşme kontrolleri, düzenleme ve giriş',
-      'Universal & Concord Warner CWR entegrasyonları',
-      'Monitoring inceleme ve tespit/talep formları düzenleme',
+    "id": "p-ahmet",
+    "name": "Ahmet Turan Çalışkan",
+    "email": "ahmet.turan@mesam.org.tr",
+    "department": "Dokümantasyon & Cue-Sheet Birimi",
+    "title": "Dokümantasyon & Cue-Sheet Uzmanı",
+    "specialRoleOrDuty": "Cue-Sheet Nöbeti (Cues)",
+    "hasCueDuty": true,
+    "assignedPublishers": [
+      "GMP ETICKET AL PRODUKSIYON ORG. A.S",
+      "CEVLAN FIKRI HAKLAR DAN VE TIC LTD STI",
+      "OKYANUS MUZIK FILM YAPIMI TURIZM ISLETMECILIGI VE OTOMOTIV SAN VE TIC LTD STI",
+      "SONSES MUZIK YAPIM LTD STI",
+      "ARBA PROD.",
+      "ONK AJANS FIKIR VE SANAT ESERLERI A.S.",
+      "LOOOPS MEDYA MUZIK DAGITIM LIMITED SIRKETI",
+      "KUZGUN MUZIK GORUNTUFILM YAYIM SAN. VE TIC. LTD. STI."
     ],
-    secondaryDuties: [
-      'TRT-1 ve TV monitoring listelerinin dağıtımı ve denetimi',
-      'Çakışmalı eserler için edisyon yazışmaları ve blokaj',
-      'Cue-sheet girişi ve work draft kayıtları',
+    "primaryDuties": [
+      "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+      "GMP Eticket, Cevlan, Okyanus Müzik, Sonses, Arba Prod, ONK Ajans, Looops Medya, Kuzgun Müzik edisyonları",
+      "Dijital platform veri eşleştirme ve process operasyonları",
+      "Eser künye ve hak sahipliği denetimleri"
     ],
-    specialExpertise: ['Median Müzik', 'Universal', 'Concord', 'Monitoring', 'CWR Entegrasyonu'],
-    assignedPublishers: ['Median', 'Universal', 'Concord', 'Audio Network'],
-    targetDailyProcess: 50,
-    targetDailyCueSheet: 10,
-    targetDailyEser: 40,
-    notes: 'Büyük edisyon firmalarının katalog uyumu ve CWR dosya transferlerinden sorumlu.',
+    "secondaryDuties": [
+      "Radyo ve TV yayın bildirim listelerinin eşleştirilmesi",
+      "Üye telefon sorgulamaları ve yönlendirme"
+    ],
+    "specialExpertise": [
+      "Cue-sheet Tescil (Cues)",
+      "ONK Ajans",
+      "GMP Eticket",
+      "Sonses Müzik"
+    ],
+    "targetDailyProcess": 35,
+    "targetDailyCueSheet": 20,
+    "targetDailyEser": 30,
+    "notes": "Resmi Görev: Cues nöbetçisi ve 8 edisyonun operasyonel sorumlusu."
   },
   {
-    id: 'p-4',
-    name: 'Neslihan Yılmaz',
-    email: 'neslihan.yilmaz@mesam.org.tr',
-    department: 'Medya & TV Takip Birimi',
-    title: 'TV / Dizi & Monitoring Uzmanı',
-    primaryDuties: [
-      'TV dizileri cue-sheet girişleri (Gönül Dağı, Zerhun, Diyanet TV vb.)',
-      'Monitoring denetim ve mutabakat çalışmaları (Burak Öksüzoğlu vb.)',
-      'Eurus Müzik ve Ulus Müzik bildirimleri ve CWR işlemleri',
-      'Film Draft arşivi temizleme ve düzenleme',
+    "id": "p-onur",
+    "name": "Onur İnanç",
+    "email": "onur.inanc@mesam.org.tr",
+    "department": "Veri İşleme & Edisyon",
+    "title": "Edisyonel Veri İşleme & CWR Uzmanı",
+    "specialRoleOrDuty": "Yabancı Edisyon & CWR Veri İşleme",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "TAKSIM ED. YABANCI",
+      "FA MUZIK FILM YAPIM YAYIM DAG. INS. SAN. VE TIS. LTD. STI.",
+      "FLOOM MUZIK A S",
+      "EDISYON MUZIK ESERLERI TANITIM SAT VE PAZ SAN VE TIC LTD STI"
     ],
-    secondaryDuties: [
-      'Tanıtım ve reklam müzikleri kontrolü',
-      'Sözleşme fesih ve revizyon işlemleri',
-      'Çağrı merkezi ve üye telefon geri dönüşleri',
+    "primaryDuties": [
+      "Taksim Edisyon Yabancı repertuvar süreçleri, CWR dosyaları ve eser girişleri",
+      "Fa Müzik, Floom Müzik, Edisyon Müzik Eserleri katalog yönetimi ve kontrolleri",
+      "Yüksek hacimli process veri işleme ve dijital eşleştirme",
+      "Dizi ve film jenerik cue-sheet doğrulamaları"
     ],
-    specialExpertise: ['TV Dizileri & Kanallar', 'Monitoring & Mutabakat', 'Film Draft Yönetimi'],
-    assignedPublishers: ['Eurus', 'Ulus Müzik', 'Zerhun'],
-    targetDailyProcess: 30,
-    targetDailyCueSheet: 15,
-    targetDailyEser: 25,
-    notes: 'Ekran takibi, TV yapımları ve özel monitoring incelemelerini yürütür.',
+    "secondaryDuties": [
+      "Çakışma tespit edilen yabancı eserlerin edisyon yazışmaları",
+      "Genel birim veri temizleme ve arşivleme"
+    ],
+    "specialExpertise": [
+      "Taksim Edisyon Yabancı",
+      "CWR Entegrasyonu",
+      "Fa Müzik",
+      "Floom Müzik"
+    ],
+    "targetDailyProcess": 60,
+    "targetDailyCueSheet": 15,
+    "targetDailyEser": 30,
+    "notes": "Resmi Görev: Taksim Yabancı ve Fa/Floom/Edisyon Müzik katalogları sorumlusu."
   },
   {
-    id: 'p-5',
-    name: 'Sena Uğurlu',
-    email: 'sena.ugurlu@mesam.org.tr',
-    department: 'Dokümantasyon & Kayıt',
-    title: 'Eser Kayıt & Dijital Platform Sorumlusu',
-    primaryDuties: [
-      'Yoğun eser bildirimi ve yeni eser kayıtları',
-      'Dijital Platformlar 2025 hak sahipliği belgeleri hazırlama',
-      'TBK kararları uygulama ve devir sözleşmesi kayıtları',
-      'Dizi/Film bölüm kayıtları ve ISWC tahsisleri',
+    "id": "p-nursena",
+    "name": "Nursena Harput",
+    "email": "nursena.harput@mesam.org.tr",
+    "department": "Dokümantasyon & Reprodüksiyon",
+    "title": "Kıdemli Edisyon & Pelikan Sorumlusu",
+    "specialRoleOrDuty": "Pelikan Edisyonu Sorumlusu",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "PELIKAN YERLI",
+      "PELIKAN YABANCI",
+      "VIYA MUZIK YAPIM TUR.ORG.HIZ.SAN&TIC.LTD.STI"
     ],
-    secondaryDuties: [
-      'Nota teslimi ve üye belge talepleri',
-      'Edisyon sözleşmesi girişleri',
-      'Anonim kayıtlar için yapım taşıma',
+    "primaryDuties": [
+      "Pelikan Yerli ve Pelikan Yabancı tüm CWR güncelleme, ACK ve eser eşleme operasyonları",
+      "Viya Müzik Yapım edisyonu sözleşme, künye ve tescil işlemleri",
+      "Pelikan sözleşme ve agreement (AGR) giriş ve onayları",
+      "Dizi & film cue-sheet kontrolü ve sisteme entegrasyonu"
     ],
-    specialExpertise: ['Yüksek Hacimli Eser Kaydı', 'Dijital Platform Hak Sahipliği', 'Devir Sözleşmeleri'],
-    assignedPublishers: ['Dijital Platformlar', 'Genel Üyeler'],
-    targetDailyProcess: 20,
-    targetDailyCueSheet: 10,
-    targetDailyEser: 60,
-    notes: 'En yüksek hacimli eser ve film kaydı gerçekleştiren operasyon sorumlusu.',
+    "secondaryDuties": [
+      "Unknown eser ve yapım kayıtları araştırması",
+      "Edisyon çakışmalarında yurt dışı ve acente yazışmaları"
+    ],
+    "specialExpertise": [
+      "Pelikan Yerli & Yabancı",
+      "Viya Müzik",
+      "CWR Formatı & ACK",
+      "Agreement Girişleri"
+    ],
+    "targetDailyProcess": 50,
+    "targetDailyCueSheet": 15,
+    "targetDailyEser": 30,
+    "notes": "Resmi Görev: Pelikan (Yerli/Yabancı) ve Viya Müzik edisyonlarının birincil sorumlusu."
   },
   {
-    id: 'p-6',
-    name: 'Cahit Benek',
-    email: 'cahit.benek@mesam.org.tr',
-    department: 'Üye İlişkileri & Repertuar İnceleme',
-    title: 'Kültürel Repertuar & Üye İletişim Uzmanı',
-    primaryDuties: [
-      'Kürtçe eser düzenleme, tespiti ve MSG ile çözülemeyen raporlamalar',
-      'Birebir üye telefon görüşmeleri ve kurum içi üye toplantıları',
-      'Eser bildirimi ve tescil işlemleri',
-      'Dilekçe ve sözleşme yurt dışı sirkülasyon takipleri',
+    "id": "p-yucel",
+    "name": "Yücel Gezgin",
+    "email": "yucel.gezgin@mesam.org.tr",
+    "department": "Medya Takip & Reklam Bildirimleri",
+    "title": "Reklam Bildirimleri & Katalog Analisti",
+    "specialRoleOrDuty": "Üye Reklam Bildirimleri",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "DARK VE DARK PRODUKSIYON HIZ TIC LTD STI",
+      "KALAN MUZIK FILM VE YAYIM LTD STI",
+      "POLL MENAJERLIK FILM MUZIK YAPIM SANAYI VE DIS TICARET LIMITED SIRKETI",
+      "POLL ORGANIZASYON MENAJERLIK VE DIS.TIC.LTD.S",
+      "POLL PRODUKSIYON FILM MUZIK YAPIM SANAYI VE DIS TICARET A S",
+      "PELIKAN MUZIK INTERNATIONAL",
+      "PELIKAN MUZIK WISE MUSIC GROUP",
+      "PELIKAN MUZIK YAY ORG DANIS DIS TIC"
     ],
-    secondaryDuties: [
-      'Vizyon dergisi ve dış kurum ziyaretleri (görevlendirmeler)',
-      'Eser tespiti yardımlaşma desteği',
-      'Cue-sheet ve process desteği',
+    "primaryDuties": [
+      "Tüm üye reklam bildirimlerinin kontrolü, doğrulanması ve kayıt işlemleri",
+      "Dark ve Dark Prodüksiyon, Kalan Müzik ve Poll Grubu (Menajerlik/Organizasyon/Prodüksiyon) edisyonları",
+      "Pelikan Müzik International, Wise Music Group ve Danışmanlık edisyon süreçleri",
+      "Reklam müzikleri ve jingle tescil koordinasyonu"
     ],
-    specialExpertise: ['Kürtçe Eser Analizi', 'Üye İletişimi & Kriz Çözümü', 'Yurt Dışı Sirkülasyon'],
-    assignedPublishers: ['Yerel & Kültürel Kataloglar', 'MSG Çakışmaları'],
-    targetDailyProcess: 20,
-    targetDailyCueSheet: 5,
-    targetDailyEser: 20,
-    notes: 'Kürtçe repertuarın tescili, üye temasları ve kurumlar arası yazışmalardan sorumlu.',
+    "secondaryDuties": [
+      "Dönemsel telif dağıtım kontrolleri ve eser mutabakatları",
+      "Kalan Müzik arşiv ve geleneksel katalog incelemeleri"
+    ],
+    "specialExpertise": [
+      "Üye Reklam Bildirimleri",
+      "Kalan Müzik",
+      "Poll Grubu",
+      "Wise Music Group",
+      "Dark ve Dark"
+    ],
+    "targetDailyProcess": 40,
+    "targetDailyCueSheet": 10,
+    "targetDailyEser": 30,
+    "notes": "Resmi Görev: Üye Reklam Bildirimleri birincil yetkilisi ve Poll/Kalan/Pelikan Int. edisyonları."
   },
   {
-    id: 'p-7',
-    name: 'Onur İnanç',
-    email: 'onur.inanc@mesam.org.tr',
-    department: 'Operasyon & CWR İşleme',
-    title: 'Veri İşleme & Süreç Operatörü',
-    primaryDuties: [
-      'Yüksek hacimli Process operasyonları (günlük 100-200+ adet)',
-      'Disney ve yabancı dizi/film cue-sheet açılışları',
-      'Universal CWR ve Neil Young eser güncellemeleri',
-      'Core eser ve künye açma çalışmaları',
+    "id": "p-cahit",
+    "name": "Cahit Benek",
+    "email": "cahit.benek@mesam.org.tr",
+    "department": "Dokümantasyon & Kültürel Repertuar",
+    "title": "Dokümantasyon & Cue-Sheet Uzmanı",
+    "specialRoleOrDuty": "Cue-Sheet Nöbeti (Cues)",
+    "hasCueDuty": true,
+    "assignedPublishers": [
+      "HUNER EDISYON ESER TELIF HAK. YAY VE TIC LTD",
+      "MONA MEDYA ILETISIM VE DANISMANLIK TIC LTD STI",
+      "ZIN KULTUR SANAT VE DIJITAL MUZ YAP DAG TIC LTD STI"
     ],
-    secondaryDuties: [
-      'Pana Film ve dizi revizyonları',
-      'Commercial / reklam müzik güncellemeleri',
-      'Tanımlanamayan yabancı film kayıtları',
+    "primaryDuties": [
+      "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+      "Hüner Edisyon, Mona Medya ve Zin Kültür Sanat edisyon süreçleri",
+      "Kürtçe, bölgesel ve kültürel eserlerin tescil, eşleme ve künye denetimleri",
+      "Bölgesel eser bildirimleri ve hak sahipliği incelemeleri"
     ],
-    specialExpertise: ['Seri Process Operasyonu', 'Disney Yabancı Diziler', 'Universal CWR'],
-    assignedPublishers: ['Disney', 'Universal', 'Pana Film'],
-    targetDailyProcess: 120,
-    targetDailyCueSheet: 15,
-    targetDailyEser: 30,
-    notes: 'Ekibin en yüksek process ve yabancı cue-sheet sayısına sahip teknik operatörü.',
+    "secondaryDuties": [
+      "Üye telefon görüşmeleri ve yöresel repertuar danışmanlığı",
+      "MSG ile çakışmalı eser listelerinin karşılaştırılması"
+    ],
+    "specialExpertise": [
+      "Cue-sheet Tescil (Cues)",
+      "Kültürel & Kürtçe Repertuar",
+      "Zin Kültür",
+      "Hüner Edisyon"
+    ],
+    "targetDailyProcess": 30,
+    "targetDailyCueSheet": 20,
+    "targetDailyEser": 35,
+    "notes": "Resmi Görev: Cues nöbetçisi, Hüner/Mona/Zin edisyonları ve kültürel repertuar uzmanı."
   },
   {
-    id: 'p-8',
-    name: 'Yücel Gezgin',
-    email: 'Yucel.Gezgin@mesam.org.tr',
-    department: 'Katalog & Dağıtım Entegrasyon',
-    title: 'Dağıtım Desteği & Katalog Analisti',
-    primaryDuties: [
-      'Disney kota altı ve genel kanal listesi çalışmaları',
-      'Pelikan şirket güncellemeleri, Sony çakışmalı editör kontrolleri',
-      'Tanımlanamayan film ayrıştırma ve dağıtım adjustment yönlendirmeleri',
-      'Reklam jingle, özgün liste ve AVR yükleme işlemleri',
+    "id": "p-emrah",
+    "name": "Emrah Kurtoğlu",
+    "email": "emrah.kurtoglu@mesam.org.tr",
+    "department": "Dış İlişkiler & Uluslararası Edisyon",
+    "title": "Uluslararası Edisyon & Median Sorumlusu",
+    "specialRoleOrDuty": "Median Müzik Grubu Edisyon Sorumlusu",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "MEDIAN COLLECTIVE FUTURE MUSIC (BARAKA INTERNATIONAL PRODUCTIONS)",
+      "MEDIAN BLUE MUSIC",
+      "MEDIAN MUSIC INTERNATIONAL",
+      "MEDIAN MUZIK EDISYON LIMITED SIRKETI",
+      "MEDIAN MUZIK EDISYON LTD STI",
+      "MEDIAN RED MUSIC"
     ],
-    secondaryDuties: [
-      'Kalan Müzik toplu eser bildirimleri',
-      'POLL eser sorguları ve Dark agreement girişleri',
-      'Yerli çakışmalı eserler için edisyon yazışmaları',
+    "primaryDuties": [
+      "Median Müzik Grubu (Collective Future, Blue, Red, International) CWR ve telif süreçleri",
+      "Uluslararası edisyon sözleşmeleri, AGM (Agreement) kontrol ve girişleri",
+      "Yabancı edisyon CWR entegrasyonu, bildirim ve mutabakat raporlamaları",
+      "TV monitoring listelerinin edisyon bazlı taranması"
     ],
-    specialExpertise: ['Disney Kanal Listeleri', 'Pelikan - Sony Çakışmaları', 'AVR / Dağıtım Entegrasyonu'],
-    assignedPublishers: ['Disney', 'Pelikan', 'Kalan Müzik', 'POLL'],
-    targetDailyProcess: 30,
-    targetDailyCueSheet: 10,
-    targetDailyEser: 25,
-    notes: 'Kanal listeleri, TV kota altı analizleri ve dağıtıma yönelik adjustment süreçlerini yürütür.',
+    "secondaryDuties": [
+      "Yabancı çakışmalı eserlerde edisyonlarla doğrudan yazışma",
+      "Genel cue-sheet ve veri işleme desteği"
+    ],
+    "specialExpertise": [
+      "Median Müzik Tüm Grubu",
+      "CWR Entegrasyonu",
+      "Uluslararası Sözleşmeler (AGM)"
+    ],
+    "targetDailyProcess": 50,
+    "targetDailyCueSheet": 10,
+    "targetDailyEser": 40,
+    "notes": "Resmi Görev: Median Müzik Edisyon Grubu (6 alt şirket) birincil ve tek yetkilisi."
   },
   {
-    id: 'p-9',
-    name: 'Ahmet Turan Çalışkan',
-    email: 'ahmet.caliskan@mesam.org.tr',
-    department: 'Hak Sahipliği & Üye Danışma',
-    title: 'Hak Sahipliği Bilgilendirme Uzmanı',
-    primaryDuties: [
-      'Eser Hak Sahipliği bilgisi verme (günlük 50-160 adet üye/yapım bilgilendirmesi)',
-      'Core (Apple, TikTok) eser güncellemeleri',
-      'Universal eser güncellemeleri ve CWR eşleştirmeleri',
-      'Cue-sheet ve process desteği',
+    "id": "p-hilal",
+    "name": "Hilal Algun",
+    "email": "hilal.algun@mesam.org.tr",
+    "department": "Dokümantasyon & Cue-Sheet Birimi",
+    "title": "Dokümantasyon & Cue-Sheet Uzmanı",
+    "specialRoleOrDuty": "Cue-Sheet Nöbeti (Cues)",
+    "hasCueDuty": true,
+    "assignedPublishers": [
+      "ES MUZIK GORUNTU FILM YAYIM SAN VE TIC LTD",
+      "PASAJ FILM REKLAM PROD SAN TIC LTD STI",
+      "SAHNE SANATLARI RIZA OKCU",
+      "PANA FILM SINEMA TELEVIZYON PRODUKSIYON SANAYI VE TICARET ANONIM SIRKETI",
+      "STAR MUZIK PRODUKSIYON ANONIM SIRKETI",
+      "ATILAY KEBAPCIOGLU GAZEL MUZIK"
     ],
-    secondaryDuties: [
-      'Unknown eser güncellemeleri',
-      'Eser kayıt ve düzeltme işlemleri',
-      'Üye danışma masası desteği',
+    "primaryDuties": [
+      "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+      "Es Müzik, Pasaj Film, Sahne Sanatları, Pana Film, Star Müzik, Gazel Müzik edisyonları",
+      "Dizi ve film yapımlarının müzik kullanım listelerinin incelenmesi ve onaylanması",
+      "Katalog cue-sheet eşleştirme ve kontrolü"
     ],
-    specialExpertise: ['Hak Sahipliği Doğrulama', 'Apple / TikTok Core Listeleri', 'Üye Danışma'],
-    assignedPublishers: ['Apple Core', 'TikTok', 'Universal'],
-    targetDailyProcess: 40,
-    targetDailyCueSheet: 5,
-    targetDailyEser: 50,
-    notes: 'Üye ve yapımcılara hak sahipliği teyitleri ve platform core güncellemelerinde odaklı.',
+    "secondaryDuties": [
+      "Yapımcı firmalarla jenerik cue-sheet teyit yazışmaları",
+      "Birim içi genel dokümantasyon desteği"
+    ],
+    "specialExpertise": [
+      "Cue-sheet Tescil (Cues)",
+      "Pana Film",
+      "Pasaj Film",
+      "Es Müzik",
+      "Sahne Sanatları"
+    ],
+    "targetDailyProcess": 30,
+    "targetDailyCueSheet": 20,
+    "targetDailyEser": 30,
+    "notes": "Resmi Görev: Cues nöbetçisi ve Pana Film/Pasaj/Es Müzik dahil 6 edisyon sorumlusu."
   },
   {
-    id: 'p-10',
-    name: 'Busra Sezer',
-    email: 'busra.sezer@mesam.org.tr',
-    department: 'Edisyon & Bölgesel Repertuar',
-    title: 'Bölgesel Repertuar & Edisyon Uzmanı',
-    primaryDuties: [
-      'Ahenk Müzik eser bildirimleri ve edisyon sözleşmeleri',
-      'Azerbaycan Meslek Birliği (Azeri eserler) telif ve hak sahipliği düzenlemeleri',
-      'Process operasyonları',
-      'DMC ve Filscap fiche kayıtları',
+    "id": "p-busra-sezer",
+    "name": "Büşra Sezer",
+    "email": "busra.sezer@mesam.org.tr",
+    "department": "Edisyon & Yapımcı İlişkileri",
+    "title": "Kıdemli Edisyon Uzmanı (DMC / Doğan Grubu)",
+    "specialRoleOrDuty": "DMC & Doğan Müzik Edisyon Sorumlusu",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "DOGAN MUZIK YAPIM VE TIC AS",
+      "NETD ( DMC ye bağlı çalışıyor)",
+      "BEYZA MUZIK BASIM YAYIN SAN VE TIC LTD STI",
+      "HASARI FILM MUZIK YAP URT PROD &AKTIF EDISYON",
+      "IKRAR YAYIMCILIK-METIN KARATAS",
+      "ISTANBUL EDISYON VE YAYINCILIK A.S",
+      "KAHUNA BILISIM LTD STI",
+      "YOYO-ISTANBUL SABRI EVREN UYSAL",
+      "EMG YAPIM MEDYA EDISYON",
+      "AHENK MUZIK"
     ],
-    secondaryDuties: [
-      'Cue-sheet yapımı',
-      'ASCAP Unknown liste taramaları',
-      'Fesih sözleşmeleri sisteme işleme',
+    "primaryDuties": [
+      "Doğan Müzik (DMC) ve NetD repertuvar bildirimleri, CWR ve eser eşlemeleri",
+      "Beyza Müzik, Hasarı Film, İkrar Yayımcılık, İstanbul Edisyon, Kahuna, Yoyo, EMG, Ahenk Müzik edisyonları",
+      "Büyük yapımcı ve edisyon kataloglarının dijital ve fiziki tescil süreçleri",
+      "Edisyon sözleşme ve yetki belgelerinin sisteme işlenmesi"
     ],
-    specialExpertise: ['Ahenk Müzik', 'Azeri Eserler & Besteciler', 'DMC Bildirimleri'],
-    assignedPublishers: ['Ahenk Müzik', 'DMC', 'IK Studio'],
-    targetDailyProcess: 80,
-    targetDailyCueSheet: 5,
-    targetDailyEser: 30,
-    notes: 'Azerbaycan repertuarı, Ahenk Müzik katalogları ve edisyon fesih süreçlerinde uzman.',
+    "secondaryDuties": [
+      "NetD video klip ve dijital dağıtım müzik bildirimleri kontrolü",
+      "Edisyon hak devir yazışmaları"
+    ],
+    "specialExpertise": [
+      "DMC / Doğan Müzik",
+      "NetD",
+      "Ahenk Müzik",
+      "İstanbul Edisyon",
+      "Kahuna Bilişim"
+    ],
+    "targetDailyProcess": 45,
+    "targetDailyCueSheet": 10,
+    "targetDailyEser": 40,
+    "notes": "Resmi Görev: DMC/NetD ve Ahenk Müzik dahil 10 büyük edisyonun birincil sorumlusu."
   },
   {
-    id: 'p-11',
-    name: 'Hilal Algun',
-    email: 'hilal.algun@mesam.org.tr',
-    department: 'Edisyonel Tescil & Dizi Takip',
-    title: 'Edisyonel Cue-sheet & Eşleştirme Uzmanı',
-    primaryDuties: [
-      'Taksim Müzik cue-sheet (10-80 bölüm toplu girişler) ve bildirimler',
-      'Es Müzik ve Pasaj Müzik eser bildirimleri ve sözleşmeleri',
-      'Process listelerinde yüksek hacimli eser eşleştirme',
-      'TRT ve dizi cue-sheetleri için künye açma',
+    "id": "p-busra-simsek",
+    "name": "Büşra Şimşek",
+    "email": "busra.simsek@mesam.org.tr",
+    "department": "Dokümantasyon & Eser Tescil",
+    "title": "Dokümantasyon & Eser Kayıt Uzmanı",
+    "specialRoleOrDuty": "Genel Dokümantasyon & Eser Tescil Operasyonları",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "Genel Eser Tescil Havuzu"
     ],
-    secondaryDuties: [
-      'TikTok Core ve ASCAP Unknown listesi tamamlama',
-      'Canlı performans kayıtları',
-      'Sorunlu sözleşmeler için hukukla koordinasyon',
+    "primaryDuties": [
+      "Eser bildirim formlarının kontrolü, tescili ve veri tabanına işlenmesi",
+      "Gelen fiziki ve dijital eser başvuru evraklarının incelenmesi",
+      "Eser künye bilgisi eksik kayıtların tespiti ve tamamlanması",
+      "Birim genel veri işleme ve process süreçlerine destek"
     ],
-    specialExpertise: ['Taksim Müzik', 'Es Müzik', 'Pasaj Müzik', 'Toplu Cue-sheet Girişi'],
-    assignedPublishers: ['Taksim', 'Es Müzik', 'Pasaj', 'Sahne Sanatları'],
-    targetDailyProcess: 100,
-    targetDailyCueSheet: 25,
-    targetDailyEser: 40,
-    notes: 'Taksim ve Es Müzik kataloglarının sistem entegrasyonunda kritik rol oynar.',
+    "secondaryDuties": [
+      "Üye telefon ve bilgi taleplerinin karşılanması",
+      "Arşiv düzenleme ve tarama operasyonları"
+    ],
+    "specialExpertise": [
+      "Eser Tescili",
+      "Künye Doğrulama",
+      "Veri Girişi"
+    ],
+    "targetDailyProcess": 30,
+    "targetDailyCueSheet": 10,
+    "targetDailyEser": 35,
+    "notes": "Resmi Görev: Dokümantasyon birimi eser kayıt ve tescil operasyonları uzmanı."
   },
   {
-    id: 'p-12',
-    name: 'TESTesref',
-    email: 'Esref.Karagoz@mesam.org.tr',
-    department: 'Birim Yöneticiliği',
-    title: 'Dokümantasyon & Dağıtım Yöneticisi',
-    primaryDuties: [
-      'Ekip genel operasyon ve raporlama koordinasyonu',
-      'Birimler arası mutabakat ve kalite kontrol',
-      'Dağıtım öncesi risk ve çakışma yönetimi',
-      'Stratejik edisyon ilişkileri ve yönetim raporlaması',
+    "id": "p-neslihan",
+    "name": "Neslihan Yılmaz",
+    "email": "neslihan.yilmaz@mesam.org.tr",
+    "department": "TV & Cue-Sheet Bildirimleri Birimi",
+    "title": "Cue-Sheet Bildirimleri & Edisyon Uzmanı",
+    "specialRoleOrDuty": "Üye Cue Sheet Bildirimleri & Cues Nöbeti",
+    "hasCueDuty": true,
+    "assignedPublishers": [
+      "TUM YILDIZLAR PRODUKSIYON MENAJERLIK MUZIK FILM YAYIM ORG. A.S",
+      "HARMONEE MUZIK EDISYON REKLAM PRO VE ORG HI",
+      "FUZYON MUZIK YAPIM TANITIM REKLAM ORG SAN VE TIC LTD",
+      "FIKS MUZIK YAYIMCILIK DANISMANLIK",
+      "MAVISAZ EDISYON MUZIK ESERLERI YAYMA VE KORUMA HAKLARI SAN TIC LTD STI",
+      "POZITIF EDISYON A S",
+      "TOO PRODUKSIYON MUZIK YAPIM EDISYON HIZ LTD STI",
+      "EURUS",
+      "MHZ",
+      "ULUS"
     ],
-    secondaryDuties: [
-      'Sistem iyileştirme ve otomasyon',
-      'Personel performans ve görev takibi',
+    "primaryDuties": [
+      "Tüm üye cue-sheet bildirimlerinin incelenmesi, kontrolü ve onaylanması",
+      "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+      "Tüm Yıldızlar, Harmonee, Füzyon, Fiks, Mavisaz, Pozitif, TOO, Eurus, MHZ, Ulus edisyonları",
+      "TV dizileri ve program jenerik müziklerinin tescili"
     ],
-    specialExpertise: ['Birim Yönetimi', 'Telif Dağıtım Stratejisi', 'Ekip Yönetimi'],
-    assignedPublishers: ['Genel Koordinasyon'],
-    targetDailyProcess: 0,
-    targetDailyCueSheet: 0,
-    targetDailyEser: 0,
-    notes: 'Birim lideri / Sistem yöneticisi.',
+    "secondaryDuties": [
+      "Monitoring TV kanal tespit listeleri ile cue-sheet karşılaştırması",
+      "Üye arayanlarına cue-sheet bildirim rehberliği"
+    ],
+    "specialExpertise": [
+      "Üye Cue Sheet Bildirimleri",
+      "Cue-sheet Nöbeti (Cues)",
+      "Eurus",
+      "Ulus",
+      "Harmonee",
+      "Pozitif"
+    ],
+    "targetDailyProcess": 35,
+    "targetDailyCueSheet": 25,
+    "targetDailyEser": 25,
+    "notes": "Resmi Görev: Üye Cue Sheet Bildirimleri resmi sorumlusu, Cues nöbetçisi ve 10 edisyon."
   },
+  {
+    "id": "p-nebahat",
+    "name": "Nebahat Seçci",
+    "email": "nebahat.secci@mesam.org.tr",
+    "department": "Edisyon & Katalog Yönetimi",
+    "title": "Kıdemli Edisyon Uzmanı (Universal / Müzikotek)",
+    "specialRoleOrDuty": "Universal Taksim Yerli & Müzikotek Sorumlusu",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "UNIVERSAL MUZIK TAKSIM EDISYON YERLI",
+      "MUZIKOTEK ORG PAZ TIC AS",
+      "GNL",
+      "IREM EMRE MUZIK",
+      "ERDEM UYANIK EDISYON",
+      "UNAL YUKSEL TMP TURKISH MUSIC PUBLISHING"
+    ],
+    "primaryDuties": [
+      "Universal Müzik Taksim Edisyon Yerli repertuvarı ve CWR bildirim süreçleri",
+      "Müzikotek Org Pazarlama kataloğu ve TV/film müzik kullanım bildirimleri",
+      "GNL, İrem Emre Müzik, Erdem Uyanık Edisyon ve Ünal Yüksel TMP edisyonları",
+      "Yerli edisyon sözleşme tescilleri ve hak sahipliği devirleri"
+    ],
+    "secondaryDuties": [
+      "Universal yerli çakışma ve ihtilaf raporlamaları",
+      "Dönemsel telif dağıtım tescil kontrolleri"
+    ],
+    "specialExpertise": [
+      "Universal Taksim Yerli",
+      "Müzikotek",
+      "GNL",
+      "İrem Emre Müzik",
+      "TMP"
+    ],
+    "targetDailyProcess": 45,
+    "targetDailyCueSheet": 10,
+    "targetDailyEser": 35,
+    "notes": "Resmi Görev: Universal Yerli, Müzikotek ve GNL dahil 6 stratejik edisyonun birincil sorumlusu."
+  },
+  {
+    "id": "p-esref",
+    "name": "Eşref Karagöz",
+    "email": "esref.karagoz@mesam.org.tr",
+    "department": "Dokümantasyon & Reprodüksiyon",
+    "title": "Dokümantasyon & Reprodüksiyon Birim Yöneticisi",
+    "specialRoleOrDuty": "Birim Yönetimi & Universal International / TMC Sorumlusu",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "UNIVERSAL MUSIC INTERNATIONAL YABANCI REPERTUVARI",
+      "TMC"
+    ],
+    "primaryDuties": [
+      "MESAM Dokümantasyon & Reprodüksiyon biriminin genel koordinasyonu ve iş dağılımı",
+      "Universal Music International Yabancı Repertuvarı stratejik takibi ve CWR denetimi",
+      "TMC (Telif Müzik Şirketi) edisyonel süreçleri ve üst düzey mutabakatları",
+      "Personel performans hedefleri, edisyon denetimleri ve yönetim raporlamaları"
+    ],
+    "secondaryDuties": [
+      "Yönetim Kurulu ve Genel Sekreterlik teknik operasyon bilgilendirmeleri",
+      "Yurt dışı meslek birlikleri (CISAC vb.) edisyonel koordinasyon"
+    ],
+    "specialExpertise": [
+      "Birim Yönetimi",
+      "Universal Music International",
+      "TMC",
+      "CISAC & Uluslararası Telif"
+    ],
+    "targetDailyProcess": 20,
+    "targetDailyCueSheet": 5,
+    "targetDailyEser": 20,
+    "notes": "Resmi Görev: Birim Direktörü, Universal Int. Yabancı ve TMC Edisyonları stratejik yöneticisi."
+  },
+  {
+    "id": "p-gokce",
+    "name": "Gökçe",
+    "email": "gokce@mesam.org.tr",
+    "department": "Eser Bildirim & Tescil Servisi",
+    "title": "Eser Bildirim Uzmanı",
+    "specialRoleOrDuty": "Eser Bildirimi",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "Üye Eser Bildirim Havuzu"
+    ],
+    "primaryDuties": [
+      "Üyelerden gelen yeni eser bildirim formlarının doğrulanması ve sisteme girişi",
+      "Fiche / eser kayıt belgelerinin arşivlenmesi ve tescil numaralandırılması",
+      "Söz yazarı, besteci ve aranjör pay bildirimlerinin kontrolü"
+    ],
+    "secondaryDuties": [
+      "Eksik beyan edilen eser formları için üye geri dönüşleri",
+      "Genel tescil arşivi düzenleme"
+    ],
+    "specialExpertise": [
+      "Eser Bildirimi",
+      "Pay Oranları & Künye",
+      "Üye Tescil Evrakları"
+    ],
+    "targetDailyProcess": 20,
+    "targetDailyCueSheet": 5,
+    "targetDailyEser": 50,
+    "notes": "Resmi Görev (Sheet 2): Eser Bildirimi birincil sorumlusu."
+  },
+  {
+    "id": "p-irem",
+    "name": "İrem",
+    "email": "irem@mesam.org.tr",
+    "department": "Eser Bildirim & Tescil Servisi",
+    "title": "Eser Bildirim Uzmanı",
+    "specialRoleOrDuty": "Eser Bildirimi",
+    "hasCueDuty": false,
+    "assignedPublishers": [
+      "Üye Eser Bildirim Havuzu"
+    ],
+    "primaryDuties": [
+      "Üyelerden gelen yeni eser bildirim formlarının doğrulanması ve sisteme girişi",
+      "Online üye portalı üzerinden iletilen eser kayıtlarının onaylanması",
+      "Eser isim benzerlikleri ve mükerrer kayıt kontrolleri"
+    ],
+    "secondaryDuties": [
+      "Hak sahipliği itirazlarında ilk kayıt belgesi incelemeleri",
+      "Birim içi tescil desteği"
+    ],
+    "specialExpertise": [
+      "Eser Bildirimi",
+      "Online Portal Tescilleri",
+      "Mükerrer Eser Kontrolü"
+    ],
+    "targetDailyProcess": 20,
+    "targetDailyCueSheet": 5,
+    "targetDailyEser": 50,
+    "notes": "Resmi Görev (Sheet 2): Eser Bildirimi birincil sorumlusu."
+  }
 ];
 
 export const RAW_REPORTS_DATA = [

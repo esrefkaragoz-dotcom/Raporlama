@@ -1,0 +1,1952 @@
+{
+  "persons": [
+    {
+      "id": "p-sena",
+      "name": "Sena Uğurlu",
+      "email": "sena.ugurlu@mesam.org.tr",
+      "department": "Telif & Üye Bildirimleri",
+      "title": "Eser Kayıt & TBK Bildirimleri Sorumlusu",
+      "specialRoleOrDuty": "TBK Bildirimleri (Üye Bildirimleri, Kararlar vb.)",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "WEDIACORP",
+        "FATIH ALP",
+        "ETL",
+        "ARTVIZYON",
+        "NK",
+        "KEMAL FARUK",
+        "GLOBAL EDISYON YAY. SOZ.",
+        "NOTAVERA"
+      ],
+      "primaryDuties": [
+        "TBK (Türk Borçlar Kanunu) bildirimleri, üye bildirimleri ve kararların incelenmesi ve takibi",
+        "Wediacorp, Fatih Alp, ETL, Artvizyon, NK, Kemal Faruk, Global Edisyon, Notavera edisyon süreçleri",
+        "Eser bildirimlerinin sisteme kaydı ve doğrulanması",
+        "Üye portalından gelen bildirimlerin kontrolü ve onay süreci"
+      ],
+      "secondaryDuties": [
+        "Dijital platform eser eşleştirme desteği",
+        "Telefon ve çağrı merkezi bildirim yönlendirmeleri"
+      ],
+      "specialExpertise": [
+        "TBK Mevzuatı",
+        "Üye Bildirimleri & Kararlar",
+        "Wediacorp Edisyonu",
+        "Notavera"
+      ],
+      "targetDailyProcess": 40,
+      "targetDailyCueSheet": 10,
+      "targetDailyEser": 35,
+      "notes": "Resmi Görev: TBK Bildirimleri sorumlusu ve 8 edisyonun birincil takipçisi."
+    },
+    {
+      "id": "p-gizem",
+      "name": "Gizem Kurtoğlu",
+      "email": "gizem.kurtoglu@mesam.org.tr",
+      "department": "Hukuk & Eser Tescil Birimi",
+      "title": "Telif İnceleme & Üye Dilekçeleri Uzmanı",
+      "specialRoleOrDuty": "Üye Dilekçeleri İnceleme & Hukuki Süreçler",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "ILS",
+        "DINAZOR",
+        "ARCADIA ENTERTAINMENT MUZIK VE BELGESEL PAZARLAMA LTD STI",
+        "KARA MUZIK EDISYON LIMITED SIRKETI",
+        "ZOO TURIZM",
+        "DINAZOR BOYAMA SANATLARI",
+        "SAYANORA",
+        "GUVERCIN MUZIK EDISYON"
+      ],
+      "primaryDuties": [
+        "Tüm üye dilekçelerinin incelenmesi, hukuki değerlendirme ve cevaplanması",
+        "ILS, Dinazor, Arcadia Entertainment, Kara Müzik, Zoo Turizm, Sayanora, Güvercin Müzik edisyon yönetimi",
+        "Dağıtım ve mekanik teliften gelen ihtilaflı ve çakışmalı eser çözümleri",
+        "CISNET ve ISWC kod araştırma ve tescil işlemleri"
+      ],
+      "secondaryDuties": [
+        "Mahkeme ve resmi kurum bilirkişi dilekçe dosyaları hazırlığı",
+        "Üye ilişkileri ile koordineli sorunlu hak sahipliği tespitleri"
+      ],
+      "specialExpertise": [
+        "Üye Dilekçeleri",
+        "Hukuki İhtilaflar",
+        "ISWC/CISNET",
+        "ILS & Dinazor Edisyonları"
+      ],
+      "targetDailyProcess": 25,
+      "targetDailyCueSheet": 10,
+      "targetDailyEser": 45,
+      "notes": "Resmi Görev: Birim genelindeki tüm üye dilekçeleri ve 8 edisyondan sorumlu."
+    },
+    {
+      "id": "p-ahmet",
+      "name": "Ahmet Turan Çalışkan",
+      "email": "ahmet.turan@mesam.org.tr",
+      "department": "Dokümantasyon & Cue-Sheet Birimi",
+      "title": "Dokümantasyon & Cue-Sheet Uzmanı",
+      "specialRoleOrDuty": "Cue-Sheet Nöbeti (Cues)",
+      "hasCueDuty": true,
+      "assignedPublishers": [
+        "GMP ETICKET AL PRODUKSIYON ORG. A.S",
+        "CEVLAN FIKRI HAKLAR DAN VE TIC LTD STI",
+        "OKYANUS MUZIK FILM YAPIMI TURIZM ISLETMECILIGI VE OTOMOTIV SAN VE TIC LTD STI",
+        "SONSES MUZIK YAPIM LTD STI",
+        "ARBA PROD.",
+        "ONK AJANS FIKIR VE SANAT ESERLERI A.S.",
+        "LOOOPS MEDYA MUZIK DAGITIM LIMITED SIRKETI",
+        "KUZGUN MUZIK GORUNTUFILM YAYIM SAN. VE TIC. LTD. STI."
+      ],
+      "primaryDuties": [
+        "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+        "GMP Eticket, Cevlan, Okyanus Müzik, Sonses, Arba Prod, ONK Ajans, Looops Medya, Kuzgun Müzik edisyonları",
+        "Dijital platform veri eşleştirme ve process operasyonları",
+        "Eser künye ve hak sahipliği denetimleri"
+      ],
+      "secondaryDuties": [
+        "Radyo ve TV yayın bildirim listelerinin eşleştirilmesi",
+        "Üye telefon sorgulamaları ve yönlendirme"
+      ],
+      "specialExpertise": [
+        "Cue-sheet Tescil (Cues)",
+        "ONK Ajans",
+        "GMP Eticket",
+        "Sonses Müzik"
+      ],
+      "targetDailyProcess": 35,
+      "targetDailyCueSheet": 20,
+      "targetDailyEser": 30,
+      "notes": "Resmi Görev: Cues nöbetçisi ve 8 edisyonun operasyonel sorumlusu."
+    },
+    {
+      "id": "p-onur",
+      "name": "Onur İnanç",
+      "email": "onur.inanc@mesam.org.tr",
+      "department": "Veri İşleme & Edisyon",
+      "title": "Edisyonel Veri İşleme & CWR Uzmanı",
+      "specialRoleOrDuty": "Yabancı Edisyon & CWR Veri İşleme",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "TAKSIM ED. YABANCI",
+        "FA MUZIK FILM YAPIM YAYIM DAG. INS. SAN. VE TIS. LTD. STI.",
+        "FLOOM MUZIK A S",
+        "EDISYON MUZIK ESERLERI TANITIM SAT VE PAZ SAN VE TIC LTD STI"
+      ],
+      "primaryDuties": [
+        "Taksim Edisyon Yabancı repertuvar süreçleri, CWR dosyaları ve eser girişleri",
+        "Fa Müzik, Floom Müzik, Edisyon Müzik Eserleri katalog yönetimi ve kontrolleri",
+        "Yüksek hacimli process veri işleme ve dijital eşleştirme",
+        "Dizi ve film jenerik cue-sheet doğrulamaları"
+      ],
+      "secondaryDuties": [
+        "Çakışma tespit edilen yabancı eserlerin edisyon yazışmaları",
+        "Genel birim veri temizleme ve arşivleme"
+      ],
+      "specialExpertise": [
+        "Taksim Edisyon Yabancı",
+        "CWR Entegrasyonu",
+        "Fa Müzik",
+        "Floom Müzik"
+      ],
+      "targetDailyProcess": 60,
+      "targetDailyCueSheet": 15,
+      "targetDailyEser": 30,
+      "notes": "Resmi Görev: Taksim Yabancı ve Fa/Floom/Edisyon Müzik katalogları sorumlusu."
+    },
+    {
+      "id": "p-nursena",
+      "name": "Nursena Harput",
+      "email": "nursena.harput@mesam.org.tr",
+      "department": "Dokümantasyon & Reprodüksiyon",
+      "title": "Kıdemli Edisyon & Pelikan Sorumlusu",
+      "specialRoleOrDuty": "Pelikan Edisyonu Sorumlusu",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "PELIKAN YERLI",
+        "PELIKAN YABANCI",
+        "VIYA MUZIK YAPIM TUR.ORG.HIZ.SAN&TIC.LTD.STI"
+      ],
+      "primaryDuties": [
+        "Pelikan Yerli ve Pelikan Yabancı tüm CWR güncelleme, ACK ve eser eşleme operasyonları",
+        "Viya Müzik Yapım edisyonu sözleşme, künye ve tescil işlemleri",
+        "Pelikan sözleşme ve agreement (AGR) giriş ve onayları",
+        "Dizi & film cue-sheet kontrolü ve sisteme entegrasyonu"
+      ],
+      "secondaryDuties": [
+        "Unknown eser ve yapım kayıtları araştırması",
+        "Edisyon çakışmalarında yurt dışı ve acente yazışmaları"
+      ],
+      "specialExpertise": [
+        "Pelikan Yerli & Yabancı",
+        "Viya Müzik",
+        "CWR Formatı & ACK",
+        "Agreement Girişleri"
+      ],
+      "targetDailyProcess": 50,
+      "targetDailyCueSheet": 15,
+      "targetDailyEser": 30,
+      "notes": "Resmi Görev: Pelikan (Yerli/Yabancı) ve Viya Müzik edisyonlarının birincil sorumlusu."
+    },
+    {
+      "id": "p-yucel",
+      "name": "Yücel Gezgin",
+      "email": "yucel.gezgin@mesam.org.tr",
+      "department": "Medya Takip & Reklam Bildirimleri",
+      "title": "Reklam Bildirimleri & Katalog Analisti",
+      "specialRoleOrDuty": "Üye Reklam Bildirimleri",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "DARK VE DARK PRODUKSIYON HIZ TIC LTD STI",
+        "KALAN MUZIK FILM VE YAYIM LTD STI",
+        "POLL MENAJERLIK FILM MUZIK YAPIM SANAYI VE DIS TICARET LIMITED SIRKETI",
+        "POLL ORGANIZASYON MENAJERLIK VE DIS.TIC.LTD.S",
+        "POLL PRODUKSIYON FILM MUZIK YAPIM SANAYI VE DIS TICARET A S",
+        "PELIKAN MUZIK INTERNATIONAL",
+        "PELIKAN MUZIK WISE MUSIC GROUP",
+        "PELIKAN MUZIK YAY ORG DANIS DIS TIC"
+      ],
+      "primaryDuties": [
+        "Tüm üye reklam bildirimlerinin kontrolü, doğrulanması ve kayıt işlemleri",
+        "Dark ve Dark Prodüksiyon, Kalan Müzik ve Poll Grubu (Menajerlik/Organizasyon/Prodüksiyon) edisyonları",
+        "Pelikan Müzik International, Wise Music Group ve Danışmanlık edisyon süreçleri",
+        "Reklam müzikleri ve jingle tescil koordinasyonu"
+      ],
+      "secondaryDuties": [
+        "Dönemsel telif dağıtım kontrolleri ve eser mutabakatları",
+        "Kalan Müzik arşiv ve geleneksel katalog incelemeleri"
+      ],
+      "specialExpertise": [
+        "Üye Reklam Bildirimleri",
+        "Kalan Müzik",
+        "Poll Grubu",
+        "Wise Music Group",
+        "Dark ve Dark"
+      ],
+      "targetDailyProcess": 40,
+      "targetDailyCueSheet": 10,
+      "targetDailyEser": 30,
+      "notes": "Resmi Görev: Üye Reklam Bildirimleri birincil yetkilisi ve Poll/Kalan/Pelikan Int. edisyonları."
+    },
+    {
+      "id": "p-cahit",
+      "name": "Cahit Benek",
+      "email": "cahit.benek@mesam.org.tr",
+      "department": "Dokümantasyon & Kültürel Repertuar",
+      "title": "Dokümantasyon & Cue-Sheet Uzmanı",
+      "specialRoleOrDuty": "Cue-Sheet Nöbeti (Cues)",
+      "hasCueDuty": true,
+      "assignedPublishers": [
+        "HUNER EDISYON ESER TELIF HAK. YAY VE TIC LTD",
+        "MONA MEDYA ILETISIM VE DANISMANLIK TIC LTD STI",
+        "ZIN KULTUR SANAT VE DIJITAL MUZ YAP DAG TIC LTD STI"
+      ],
+      "primaryDuties": [
+        "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+        "Hüner Edisyon, Mona Medya ve Zin Kültür Sanat edisyon süreçleri",
+        "Kürtçe, bölgesel ve kültürel eserlerin tescil, eşleme ve künye denetimleri",
+        "Bölgesel eser bildirimleri ve hak sahipliği incelemeleri"
+      ],
+      "secondaryDuties": [
+        "Üye telefon görüşmeleri ve yöresel repertuar danışmanlığı",
+        "MSG ile çakışmalı eser listelerinin karşılaştırılması"
+      ],
+      "specialExpertise": [
+        "Cue-sheet Tescil (Cues)",
+        "Kültürel & Kürtçe Repertuar",
+        "Zin Kültür",
+        "Hüner Edisyon"
+      ],
+      "targetDailyProcess": 30,
+      "targetDailyCueSheet": 20,
+      "targetDailyEser": 35,
+      "notes": "Resmi Görev: Cues nöbetçisi, Hüner/Mona/Zin edisyonları ve kültürel repertuar uzmanı."
+    },
+    {
+      "id": "p-emrah",
+      "name": "Emrah Kurtoğlu",
+      "email": "emrah.kurtoglu@mesam.org.tr",
+      "department": "Dış İlişkiler & Uluslararası Edisyon",
+      "title": "Uluslararası Edisyon & Median Sorumlusu",
+      "specialRoleOrDuty": "Median Müzik Grubu Edisyon Sorumlusu",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "MEDIAN COLLECTIVE FUTURE MUSIC (BARAKA INTERNATIONAL PRODUCTIONS)",
+        "MEDIAN BLUE MUSIC",
+        "MEDIAN MUSIC INTERNATIONAL",
+        "MEDIAN MUZIK EDISYON LIMITED SIRKETI",
+        "MEDIAN MUZIK EDISYON LTD STI",
+        "MEDIAN RED MUSIC"
+      ],
+      "primaryDuties": [
+        "Median Müzik Grubu (Collective Future, Blue, Red, International) CWR ve telif süreçleri",
+        "Uluslararası edisyon sözleşmeleri, AGM (Agreement) kontrol ve girişleri",
+        "Yabancı edisyon CWR entegrasyonu, bildirim ve mutabakat raporlamaları",
+        "TV monitoring listelerinin edisyon bazlı taranması"
+      ],
+      "secondaryDuties": [
+        "Yabancı çakışmalı eserlerde edisyonlarla doğrudan yazışma",
+        "Genel cue-sheet ve veri işleme desteği"
+      ],
+      "specialExpertise": [
+        "Median Müzik Tüm Grubu",
+        "CWR Entegrasyonu",
+        "Uluslararası Sözleşmeler (AGM)"
+      ],
+      "targetDailyProcess": 50,
+      "targetDailyCueSheet": 10,
+      "targetDailyEser": 40,
+      "notes": "Resmi Görev: Median Müzik Edisyon Grubu (6 alt şirket) birincil ve tek yetkilisi."
+    },
+    {
+      "id": "p-hilal",
+      "name": "Hilal Algun",
+      "email": "hilal.algun@mesam.org.tr",
+      "department": "Dokümantasyon & Cue-Sheet Birimi",
+      "title": "Dokümantasyon & Cue-Sheet Uzmanı",
+      "specialRoleOrDuty": "Cue-Sheet Nöbeti (Cues)",
+      "hasCueDuty": true,
+      "assignedPublishers": [
+        "ES MUZIK GORUNTU FILM YAYIM SAN VE TIC LTD",
+        "PASAJ FILM REKLAM PROD SAN TIC LTD STI",
+        "SAHNE SANATLARI RIZA OKCU",
+        "PANA FILM SINEMA TELEVIZYON PRODUKSIYON SANAYI VE TICARET ANONIM SIRKETI",
+        "STAR MUZIK PRODUKSIYON ANONIM SIRKETI",
+        "ATILAY KEBAPCIOGLU GAZEL MUZIK"
+      ],
+      "primaryDuties": [
+        "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+        "Es Müzik, Pasaj Film, Sahne Sanatları, Pana Film, Star Müzik, Gazel Müzik edisyonları",
+        "Dizi ve film yapımlarının müzik kullanım listelerinin incelenmesi ve onaylanması",
+        "Katalog cue-sheet eşleştirme ve kontrolü"
+      ],
+      "secondaryDuties": [
+        "Yapımcı firmalarla jenerik cue-sheet teyit yazışmaları",
+        "Birim içi genel dokümantasyon desteği"
+      ],
+      "specialExpertise": [
+        "Cue-sheet Tescil (Cues)",
+        "Pana Film",
+        "Pasaj Film",
+        "Es Müzik",
+        "Sahne Sanatları"
+      ],
+      "targetDailyProcess": 30,
+      "targetDailyCueSheet": 20,
+      "targetDailyEser": 30,
+      "notes": "Resmi Görev: Cues nöbetçisi ve Pana Film/Pasaj/Es Müzik dahil 6 edisyon sorumlusu."
+    },
+    {
+      "id": "p-busra-sezer",
+      "name": "Büşra Sezer",
+      "email": "busra.sezer@mesam.org.tr",
+      "department": "Edisyon & Yapımcı İlişkileri",
+      "title": "Kıdemli Edisyon Uzmanı (DMC / Doğan Grubu)",
+      "specialRoleOrDuty": "DMC & Doğan Müzik Edisyon Sorumlusu",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "DOGAN MUZIK YAPIM VE TIC AS",
+        "NETD ( DMC ye bağlı çalışıyor)",
+        "BEYZA MUZIK BASIM YAYIN SAN VE TIC LTD STI",
+        "HASARI FILM MUZIK YAP URT PROD &AKTIF EDISYON",
+        "IKRAR YAYIMCILIK-METIN KARATAS",
+        "ISTANBUL EDISYON VE YAYINCILIK A.S",
+        "KAHUNA BILISIM LTD STI",
+        "YOYO-ISTANBUL SABRI EVREN UYSAL",
+        "EMG YAPIM MEDYA EDISYON",
+        "AHENK MUZIK"
+      ],
+      "primaryDuties": [
+        "Doğan Müzik (DMC) ve NetD repertuvar bildirimleri, CWR ve eser eşlemeleri",
+        "Beyza Müzik, Hasarı Film, İkrar Yayımcılık, İstanbul Edisyon, Kahuna, Yoyo, EMG, Ahenk Müzik edisyonları",
+        "Büyük yapımcı ve edisyon kataloglarının dijital ve fiziki tescil süreçleri",
+        "Edisyon sözleşme ve yetki belgelerinin sisteme işlenmesi"
+      ],
+      "secondaryDuties": [
+        "NetD video klip ve dijital dağıtım müzik bildirimleri kontrolü",
+        "Edisyon hak devir yazışmaları"
+      ],
+      "specialExpertise": [
+        "DMC / Doğan Müzik",
+        "NetD",
+        "Ahenk Müzik",
+        "İstanbul Edisyon",
+        "Kahuna Bilişim"
+      ],
+      "targetDailyProcess": 45,
+      "targetDailyCueSheet": 10,
+      "targetDailyEser": 40,
+      "notes": "Resmi Görev: DMC/NetD ve Ahenk Müzik dahil 10 büyük edisyonun birincil sorumlusu."
+    },
+    {
+      "id": "p-busra-simsek",
+      "name": "Büşra Şimşek",
+      "email": "busra.simsek@mesam.org.tr",
+      "department": "Dokümantasyon & Eser Tescil",
+      "title": "Dokümantasyon & Eser Kayıt Uzmanı",
+      "specialRoleOrDuty": "Genel Dokümantasyon & Eser Tescil Operasyonları",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "Genel Eser Tescil Havuzu"
+      ],
+      "primaryDuties": [
+        "Eser bildirim formlarının kontrolü, tescili ve veri tabanına işlenmesi",
+        "Gelen fiziki ve dijital eser başvuru evraklarının incelenmesi",
+        "Eser künye bilgisi eksik kayıtların tespiti ve tamamlanması",
+        "Birim genel veri işleme ve process süreçlerine destek"
+      ],
+      "secondaryDuties": [
+        "Üye telefon ve bilgi taleplerinin karşılanması",
+        "Arşiv düzenleme ve tarama operasyonları"
+      ],
+      "specialExpertise": [
+        "Eser Tescili",
+        "Künye Doğrulama",
+        "Veri Girişi"
+      ],
+      "targetDailyProcess": 30,
+      "targetDailyCueSheet": 10,
+      "targetDailyEser": 35,
+      "notes": "Resmi Görev: Dokümantasyon birimi eser kayıt ve tescil operasyonları uzmanı."
+    },
+    {
+      "id": "p-neslihan",
+      "name": "Neslihan Yılmaz",
+      "email": "neslihan.yilmaz@mesam.org.tr",
+      "department": "TV & Cue-Sheet Bildirimleri Birimi",
+      "title": "Cue-Sheet Bildirimleri & Edisyon Uzmanı",
+      "specialRoleOrDuty": "Üye Cue Sheet Bildirimleri & Cues Nöbeti",
+      "hasCueDuty": true,
+      "assignedPublishers": [
+        "TUM YILDIZLAR PRODUKSIYON MENAJERLIK MUZIK FILM YAYIM ORG. A.S",
+        "HARMONEE MUZIK EDISYON REKLAM PRO VE ORG HI",
+        "FUZYON MUZIK YAPIM TANITIM REKLAM ORG SAN VE TIC LTD",
+        "FIKS MUZIK YAYIMCILIK DANISMANLIK",
+        "MAVISAZ EDISYON MUZIK ESERLERI YAYMA VE KORUMA HAKLARI SAN TIC LTD STI",
+        "POZITIF EDISYON A S",
+        "TOO PRODUKSIYON MUZIK YAPIM EDISYON HIZ LTD STI",
+        "EURUS",
+        "MHZ",
+        "ULUS"
+      ],
+      "primaryDuties": [
+        "Tüm üye cue-sheet bildirimlerinin incelenmesi, kontrolü ve onaylanması",
+        "Düzenli Cue-sheet girişleri ve nöbet operasyonları (Cues nöbeti)",
+        "Tüm Yıldızlar, Harmonee, Füzyon, Fiks, Mavisaz, Pozitif, TOO, Eurus, MHZ, Ulus edisyonları",
+        "TV dizileri ve program jenerik müziklerinin tescili"
+      ],
+      "secondaryDuties": [
+        "Monitoring TV kanal tespit listeleri ile cue-sheet karşılaştırması",
+        "Üye arayanlarına cue-sheet bildirim rehberliği"
+      ],
+      "specialExpertise": [
+        "Üye Cue Sheet Bildirimleri",
+        "Cue-sheet Nöbeti (Cues)",
+        "Eurus",
+        "Ulus",
+        "Harmonee",
+        "Pozitif"
+      ],
+      "targetDailyProcess": 35,
+      "targetDailyCueSheet": 25,
+      "targetDailyEser": 25,
+      "notes": "Resmi Görev: Üye Cue Sheet Bildirimleri resmi sorumlusu, Cues nöbetçisi ve 10 edisyon."
+    },
+    {
+      "id": "p-nebahat",
+      "name": "Nebahat Seçci",
+      "email": "nebahat.secci@mesam.org.tr",
+      "department": "Edisyon & Katalog Yönetimi",
+      "title": "Kıdemli Edisyon Uzmanı (Universal / Müzikotek)",
+      "specialRoleOrDuty": "Universal Taksim Yerli & Müzikotek Sorumlusu",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "UNIVERSAL MUZIK TAKSIM EDISYON YERLI",
+        "MUZIKOTEK ORG PAZ TIC AS",
+        "GNL",
+        "IREM EMRE MUZIK",
+        "ERDEM UYANIK EDISYON",
+        "UNAL YUKSEL TMP TURKISH MUSIC PUBLISHING"
+      ],
+      "primaryDuties": [
+        "Universal Müzik Taksim Edisyon Yerli repertuvarı ve CWR bildirim süreçleri",
+        "Müzikotek Org Pazarlama kataloğu ve TV/film müzik kullanım bildirimleri",
+        "GNL, İrem Emre Müzik, Erdem Uyanık Edisyon ve Ünal Yüksel TMP edisyonları",
+        "Yerli edisyon sözleşme tescilleri ve hak sahipliği devirleri"
+      ],
+      "secondaryDuties": [
+        "Universal yerli çakışma ve ihtilaf raporlamaları",
+        "Dönemsel telif dağıtım tescil kontrolleri"
+      ],
+      "specialExpertise": [
+        "Universal Taksim Yerli",
+        "Müzikotek",
+        "GNL",
+        "İrem Emre Müzik",
+        "TMP"
+      ],
+      "targetDailyProcess": 45,
+      "targetDailyCueSheet": 10,
+      "targetDailyEser": 35,
+      "notes": "Resmi Görev: Universal Yerli, Müzikotek ve GNL dahil 6 stratejik edisyonun birincil sorumlusu."
+    },
+    {
+      "id": "p-esref",
+      "name": "Eşref Karagöz",
+      "email": "esref.karagoz@mesam.org.tr",
+      "department": "Dokümantasyon & Reprodüksiyon",
+      "title": "Dokümantasyon & Reprodüksiyon Birim Yöneticisi",
+      "specialRoleOrDuty": "Birim Yönetimi & Universal International / TMC Sorumlusu",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "UNIVERSAL MUSIC INTERNATIONAL YABANCI REPERTUVARI",
+        "TMC"
+      ],
+      "primaryDuties": [
+        "MESAM Dokümantasyon & Reprodüksiyon biriminin genel koordinasyonu ve iş dağılımı",
+        "Universal Music International Yabancı Repertuvarı stratejik takibi ve CWR denetimi",
+        "TMC (Telif Müzik Şirketi) edisyonel süreçleri ve üst düzey mutabakatları",
+        "Personel performans hedefleri, edisyon denetimleri ve yönetim raporlamaları"
+      ],
+      "secondaryDuties": [
+        "Yönetim Kurulu ve Genel Sekreterlik teknik operasyon bilgilendirmeleri",
+        "Yurt dışı meslek birlikleri (CISAC vb.) edisyonel koordinasyon"
+      ],
+      "specialExpertise": [
+        "Birim Yönetimi",
+        "Universal Music International",
+        "TMC",
+        "CISAC & Uluslararası Telif"
+      ],
+      "targetDailyProcess": 20,
+      "targetDailyCueSheet": 5,
+      "targetDailyEser": 20,
+      "notes": "Resmi Görev: Birim Direktörü, Universal Int. Yabancı ve TMC Edisyonları stratejik yöneticisi."
+    },
+    {
+      "id": "p-gokce",
+      "name": "Gökçe",
+      "email": "gokce@mesam.org.tr",
+      "department": "Eser Bildirim & Tescil Servisi",
+      "title": "Eser Bildirim Uzmanı",
+      "specialRoleOrDuty": "Eser Bildirimi",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "Üye Eser Bildirim Havuzu"
+      ],
+      "primaryDuties": [
+        "Üyelerden gelen yeni eser bildirim formlarının doğrulanması ve sisteme girişi",
+        "Fiche / eser kayıt belgelerinin arşivlenmesi ve tescil numaralandırılması",
+        "Söz yazarı, besteci ve aranjör pay bildirimlerinin kontrolü"
+      ],
+      "secondaryDuties": [
+        "Eksik beyan edilen eser formları için üye geri dönüşleri",
+        "Genel tescil arşivi düzenleme"
+      ],
+      "specialExpertise": [
+        "Eser Bildirimi",
+        "Pay Oranları & Künye",
+        "Üye Tescil Evrakları"
+      ],
+      "targetDailyProcess": 20,
+      "targetDailyCueSheet": 5,
+      "targetDailyEser": 50,
+      "notes": "Resmi Görev (Sheet 2): Eser Bildirimi birincil sorumlusu."
+    },
+    {
+      "id": "p-irem",
+      "name": "İrem",
+      "email": "irem@mesam.org.tr",
+      "department": "Eser Bildirim & Tescil Servisi",
+      "title": "Eser Bildirim Uzmanı",
+      "specialRoleOrDuty": "Eser Bildirimi",
+      "hasCueDuty": false,
+      "assignedPublishers": [
+        "Üye Eser Bildirim Havuzu"
+      ],
+      "primaryDuties": [
+        "Üyelerden gelen yeni eser bildirim formlarının doğrulanması ve sisteme girişi",
+        "Online üye portalı üzerinden iletilen eser kayıtlarının onaylanması",
+        "Eser isim benzerlikleri ve mükerrer kayıt kontrolleri"
+      ],
+      "secondaryDuties": [
+        "Hak sahipliği itirazlarında ilk kayıt belgesi incelemeleri",
+        "Birim içi tescil desteği"
+      ],
+      "specialExpertise": [
+        "Eser Bildirimi",
+        "Online Portal Tescilleri",
+        "Mükerrer Eser Kontrolü"
+      ],
+      "targetDailyProcess": 20,
+      "targetDailyCueSheet": 5,
+      "targetDailyEser": 50,
+      "notes": "Resmi Görev (Sheet 2): Eser Bildirimi birincil sorumlusu."
+    }
+  ],
+  "reports": [
+    {
+      "id": "f45e8841-6e3b-46fb-b5fd-1d9f615cb7ac",
+      "created_at": "2026-06-17 16:34:47",
+      "person": "Nursena Harput",
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-15",
+      "report": "53 tane process\nCue-sheet kontrol",
+      "parsedMetrics": {
+        "processCount": 53,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "a25d5544-a50a-47d1-8e4b-ca42b8a58d4a",
+      "created_at": "2026-06-17 16:34:58",
+      "person": "Nursena Harput",
+      "start_date": "2026-06-16",
+      "end_date": "2026-06-16",
+      "report": "56 tane process\nCue-sheet kontrol",
+      "parsedMetrics": {
+        "processCount": 56,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "6a6d7205-7204-460a-911e-190760791f79",
+      "created_at": "2026-06-17 16:35:14",
+      "person": "Nursena Harput",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "61 tane process\n4 tane cue-sheet",
+      "parsedMetrics": {
+        "processCount": 61,
+        "cueSheetCount": 4,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "fe6ab4af-7fa6-4306-8e8d-9ca478f88cb9",
+      "created_at": "2026-06-17 16:39:00",
+      "person": "Gizem Kurtoğlu",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "88 eser kaydı,\n3 cue sheet (vefa sultan),\n23 cisnet-ıswc,\nve dağıtımdan gelen/bekleyen sorunlu eserlerle ilgili tespit çalışmalarım oldu. (mekanik/üye ilişkileri/call center)",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 3,
+        "eserCount": 88,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "a77c9bec-7121-4e5a-a77c-beb0cdd10ea2",
+      "created_at": "2026-06-17 16:41:08",
+      "person": "Emrah Kurtoğlu",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "Process güncelleme",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "655556e4-7311-45b5-a5da-66ae34e9e301",
+      "created_at": "2026-06-17 16:44:35",
+      "person": "Neslihan Yılmaz",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "ZERHUN CUE SHEET BİLDİRİMLERİ SİSTEME İŞLENDİ. (DEVAM EDİYOR)",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Cue Sheet"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "b9e1c365-7015-4243-b693-39447cdfad40",
+      "created_at": "2026-06-17 16:46:38",
+      "person": "Sena Uğurlu",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "ESER KAYDI\nISWC ALMA",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "2bef3f18-80e9-49d3-b3b7-c3ab26ade5c2",
+      "created_at": "2026-06-17 16:51:49",
+      "person": "Cahit Benek",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "- 31 eser bildirimi\n- Process çalışması\n- Üye telefon görüşmesi\n- Vizyon dergisi için çalışma.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 31,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "7cc56dde-aadf-4fc3-9806-1c376ed1f2d0",
+      "created_at": "2026-06-17 16:52:59",
+      "person": "Onur İnanç",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "121 adet process yaptım",
+      "parsedMetrics": {
+        "processCount": 121,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "c5ba586d-585a-4a36-ad9e-cffde18f3a74",
+      "created_at": "2026-06-17 16:58:38",
+      "person": "Yücel Gezgin",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "Ocak dağıtımı için sonradan gelen unk güncelleme çalışmalarına başladım 7 film girişi yaptım\nDrafttan gelen 2 reklam jingle girişi yaptım",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Tanıtım / Reklam"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "1c768441-aab9-4a3b-b08c-63b3a3b6f9cf",
+      "created_at": "2026-06-17 16:59:16",
+      "person": "Ahmet Turan Çalışkan",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "47 adet proccess 52 adet eser hak sahipliği bilgisi verilmiştir.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 52,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Sözleşme & Hak Sahipliği"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "999b8b02-bffa-4c1b-9cda-33c8ada9d79d",
+      "created_at": "2026-06-18 16:33:39",
+      "person": "Büşra Sezer",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "93 adet process yapıldı\nMesam - Msg toplantısına katılındı\nFılscap fiche eser kaydetmeye başlandı",
+      "parsedMetrics": {
+        "processCount": 93,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "96adb92d-4f56-4e62-97a5-91f9c849e0e3",
+      "created_at": "2026-06-18 16:46:18",
+      "person": "Gizem Kurtoğlu",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "31 ıswc kodu çalışmam oldu, gün içerisinde dağıtımdan tespit edilen ve telif takibi için iletilen eserlerle ilgilendim. Hukuk-üye ilişkileri görüşmeleri gerçekleştirdim. Wp sorunlu dosyalarda bekleyenler için ve geçmiş tarihli sorunlu mailler hakkında call center ile görüşmelerim oldu.\nGökçe'yle draft bekleyen sorunlu bildirimlerle ilgilendim.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Dilekçe & Hukuk / TBK",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "a6fcf60e-9bdf-4bed-a58a-225d70b44867",
+      "created_at": "2026-06-18 16:51:22",
+      "person": "Nursena Harput",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "32 tane process\n3 tane cue-sheet\n9 tane fiche kaydı",
+      "parsedMetrics": {
+        "processCount": 32,
+        "cueSheetCount": 3,
+        "eserCount": 9,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "99ae3fee-f16a-4afc-8c8e-87cfeab5080a",
+      "created_at": "2026-06-18 16:52:43",
+      "person": "Emrah Kurtoğlu",
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17",
+      "report": "process yapıldı.\n\nmedian Müzik eser CWR eser bilgisi verildi ( 9 eser)",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 9,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Median"
+        ]
+      }
+    },
+    {
+      "id": "04fa2784-50b9-435e-9d4d-8de47cef0b2d",
+      "created_at": "2026-06-18 16:54:12",
+      "person": "Sena Uğurlu",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "ESER KAYDI\nHAK SAHIPLIK BELGELERI\nISWC ALMA\nDEVIR SOZLESMESI ESER LISTESI KONTROLU (GULABI GULTEKIN - UMIT CORLUK)",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Sözleşme & Hak Sahipliği",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "87483a5e-ca18-48d9-8389-3c8407a7f55d",
+      "created_at": "2026-06-18 16:54:51",
+      "person": "Yücel Gezgin",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "Yabancı cue-sheet girişi yapıldı\ntanımlanamayan film ayrıştırma çalışması yapıldı\nfich girişi yapıldı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "b5a6dbdb-1a29-446a-9253-dcb62983533e",
+      "created_at": "2026-06-18 16:56:56",
+      "person": "Neslihan Yılmaz",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "EURUS / MAİL \nOGUZ MUTLU GÜVEN / YOUTUBE Process kontrol\nDIYANET TV / IBRAHIMCE / CUE SHEET tamamlandı (19 Bölüm)\nTARAMA / dosyalar hazırlandı\nMONITORING / Mutabakat kontrol\nFISCHE / FILSCAP (10) eser girişi tamamlandı.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet"
+        ],
+        "detectedPublishers": [
+          "Eurus"
+        ]
+      }
+    },
+    {
+      "id": "eb3da27f-695d-449d-81a1-15f5bf586409",
+      "created_at": "2026-06-18 16:57:13",
+      "person": "Onur İnanç",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "102 ADET PROCESS\n19 ADET FILSCAP ESER KAYDI",
+      "parsedMetrics": {
+        "processCount": 102,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "d7accc9d-c812-424c-8556-5b0402cdf2d4",
+      "created_at": "2026-06-18 16:57:18",
+      "person": "Ahmet Turan Çalışkan",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "51 adet eser bilgi, 21 adet process",
+      "parsedMetrics": {
+        "processCount": 21,
+        "cueSheetCount": 0,
+        "eserCount": 51,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "36bac540-df3f-49b8-b031-c3bea3446572",
+      "created_at": "2026-06-19 08:07:44",
+      "person": "Cahit Benek",
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-18",
+      "report": "- 28 eser bildirimi\n-Dokumantasyon birim toplantısı\n- Process çalışması\n- Üye telefon görüşmesi",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 28,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "46345ae0-2a61-4775-9324-03af1c068081",
+      "created_at": "2026-06-19 16:38:58",
+      "person": "Büşra Sezer",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "FILSCAP fiche yapıldı\n115 adet process yapıldı",
+      "parsedMetrics": {
+        "processCount": 115,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "a463cdcc-c760-4bd9-ad7d-ac4418a5527f",
+      "created_at": "2026-06-19 16:41:26",
+      "person": "Cahit Benek",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "- 16 eser bildirimi\n- Eser tespiti yardımlaşma\n- Process çalışması\n- Üye telefon görüşmesi",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 16,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "55b2b582-1f57-4e5c-b5d4-ce8c2f197c62",
+      "created_at": "2026-06-19 16:53:14",
+      "person": "Onur İnanç",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "130 ADET PROCESS",
+      "parsedMetrics": {
+        "processCount": 130,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "f2e995a5-7e7c-48fa-a383-7dfd75fd7eae",
+      "created_at": "2026-06-19 16:55:33",
+      "person": "Ahmet Turan Çalışkan",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "49 adet eser hak sahipliği 10 adet eser kayıt 19 adet process yapılmıştır.",
+      "parsedMetrics": {
+        "processCount": 19,
+        "cueSheetCount": 0,
+        "eserCount": 59,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Sözleşme & Hak Sahipliği"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "212f002d-2efa-4c2f-ad22-dda6201451fb",
+      "created_at": "2026-06-19 16:57:21",
+      "person": "Neslihan Yılmaz",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "Öğleden önce PROCESS\nEURUS / yerli eser bildirim girişi\nGÖNÜL DAĞI / Cue Sheet girişi\nOĞUZ MUTLU GÜVEN / YOUTUBE toplantı.\nTarama dosyaları hazırlandı.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": [
+          "Eurus"
+        ]
+      }
+    },
+    {
+      "id": "c9f6b0bf-7541-4547-b25d-157d805e7863",
+      "created_at": "2026-06-19 16:57:37",
+      "person": "Emrah Kurtoğlu",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "Fiche kayıtları açıldı\nprocess yapıldı\nmedian istediği CWR kontrolleri yapıldı ( 10 eser )\n3 cue sheet girildi.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 3,
+        "eserCount": 10,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Median"
+        ]
+      }
+    },
+    {
+      "id": "64b94b60-1b9f-41e9-ac58-e6eb74585781",
+      "created_at": "2026-06-19 16:59:24",
+      "person": "Sena Uğurlu",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "ISWC ALMA\n2 BÖLÜM KAYDI\n7 ESER KAYDI",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 7,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "783a9268-8f52-4cb6-ad31-8c45b2927c1e",
+      "created_at": "2026-06-19 16:59:49",
+      "person": "Yücel Gezgin",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "Pelikan yeni kayıt ve güncellenecek eserleri kontrol edildi\ntanımlanamayan filmler kontrol edildi\nyerli çakışmalı eserler ile ilgili mailler atıldı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Pelikan"
+        ]
+      }
+    },
+    {
+      "id": "8c372295-ee69-4813-a715-4832d8760f80",
+      "created_at": "2026-06-22 11:55:09",
+      "person": "Yücel Gezgin",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "Sistem kapalıyken bekleyen mail eser güncelleme çalışmalarına başlandı\nSezgi-Sinan toplantısı yapıldı\nKalan Müzik izinsiz eserler için güncelleme mail çalışması yapıldı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Toplantı & Telefon / Görüşme",
+          "İzin / Mazeret"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "540ea9d8-07a1-467b-b7ac-08712f402caa",
+      "created_at": "2026-06-22 13:06:34",
+      "person": "Gizem Kurtoğlu",
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-19",
+      "report": "60 eser kayıt çalışması,\nISWC kodu için excel çalışması,\nTelif takibi için iletilen sorunlu bildirimlerle üye ilişkileri ve call center ekibiyle ortak çalışmalarım oldu.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 60,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "91d97c01-5e23-4db8-9b9f-0e1f51bd2c86",
+      "created_at": "2026-06-22 16:18:09",
+      "person": "Gizem Kurtoğlu",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "41 ıswc kod çalışması,\n1 dilekçe,\n1 tbk yönlendirmesi,\n84 eser kayıt çalışmaları oldu",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 84,
+        "dilekceCount": 1,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Dilekçe & Hukuk / TBK"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "612259e1-af27-47f4-8089-61c524ce9114",
+      "created_at": "2026-06-22 16:57:02",
+      "person": "Ahmet Turan Çalışkan",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "44 adet eser hak sahipliği 12 adet eser güncelleme",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 56,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Sözleşme & Hak Sahipliği"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "d658121d-0cb7-4c74-8538-f07e63f76b56",
+      "created_at": "2026-06-22 16:57:24",
+      "person": "Neslihan Yılmaz",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "Film Draft / GONUL DAGI bölümler kaydedildi\nULUS MÜZİK işlemleri \nMHZ / SÖZLEŞME fesih tamamlandı (BAYRAM AKBAŞ)\nEURUS MÜZİK unknown kayıt güncelleme / kontrol \nASCAP listesine başlandı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Sözleşme & Hak Sahipliği",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Eurus"
+        ]
+      }
+    },
+    {
+      "id": "8b391ba3-ad3f-42a6-8a70-e54d060f76eb",
+      "created_at": "2026-06-22 16:58:28",
+      "person": "Nursena Harput",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "Pelikan Mail (83 tane eser güncelleme – giriş), agr giriş\n19 tane unknown kayıt güncelleme",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 83,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 19,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Pelikan"
+        ]
+      }
+    },
+    {
+      "id": "8750f07e-8e01-4773-93cc-0c1bd74cc42e",
+      "created_at": "2026-06-22 16:58:33",
+      "person": "Onur İnanç",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "2 adet eser Bildirimi (ES)\nNot aldığım editlenecekleri editledim\nCevlan Film Drafta 11 bölüm cue shhet atmış onların kaydını girdim\n11:30-14:30 arası Process yaptım\n44 adet eser güncelleme yaptım",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 46,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "0df44af0-7adc-495d-af8e-c78ee0c00236",
+      "created_at": "2026-06-22 16:58:41",
+      "person": "Büşra Sezer",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "Fikret Qocayev eser bildirimleri girildi - Ahenk\nMUTELLIBOV TOFIQ sözleşmesi girildi - Ahenk\nSahne Sanatları eser bildirimi revize edildi.\nProcess yapıldı.\nASCAP_MESAM_UP_RESULTS_20251231/ UNKNOWN ESERLER başlandı.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi",
+          "Sözleşme & Hak Sahipliği",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Ahenk"
+        ]
+      }
+    },
+    {
+      "id": "98ac9325-6baa-4d69-9a4e-80dbb8514a37",
+      "created_at": "2026-06-22 16:59:06",
+      "person": "Emrah Kurtoğlu",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "process yapıldı\nUnknown güncelleme listesi yapılıyor. \nMedian dan eserlerin CWR kontrolleri yapıldı. \nMedian ın talep ettiği raporlar atıldı.\n\nSayı çekemiyorum. Rapor çekme kısmı dolu. gelmiyor. \n\n39 process 18 unknown güncelleme",
+      "parsedMetrics": {
+        "processCount": 39,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 18,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Median"
+        ]
+      }
+    },
+    {
+      "id": "b55d54d2-6a1c-41b0-b214-eb8a90eca6fb",
+      "created_at": "2026-06-22 17:01:07",
+      "person": "Cahit Benek",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "- 36 eser bildirimi\n- 2 sözleşme\n- 3 dilekçe\n- TBK için eser hazırlama\n- Üye telefon görüşmesi",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 36,
+        "dilekceCount": 3,
+        "agreementCount": 2,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Sözleşme & Hak Sahipliği",
+          "Dilekçe & Hukuk / TBK",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "943eb60f-6e71-4124-ba8c-1ccb799ae3bf",
+      "created_at": "2026-06-23 08:18:16",
+      "person": "Hilal Algun",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-22",
+      "report": "37 adet eser Fiche'e göre sisteme kaydedildi\nApple Mesam process listesinde 60 eser kaydedildi\n21 Unknown kayıt, Cısnet'e göre güncellendi",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 97,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 21,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "3c3fa4ff-5f32-4261-bd67-8de35c49fa4a",
+      "created_at": "2026-06-23 16:36:32",
+      "person": "Gizem Kurtoğlu",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "77 eser kaydı\n117 yeni üye liste çalışması (eser kayıt tespiti ve local tespiti)\nsorunlu eserlere ilişkin mail kontrolleri",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 77,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "0f0182dc-cd7f-4977-be73-5f0039040a71",
+      "created_at": "2026-06-23 16:44:13",
+      "person": "Büşra Sezer",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "ASCAP_MESAM_UP_RESULTS_20251231/ UNKNOWN ESERLER listesi yapıldı.\nProcess yapıldı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "99023756-3590-49e8-9e71-26b740965a6a",
+      "created_at": "2026-06-23 16:51:24",
+      "person": "Onur İnanç",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "20 ADET UNKNOWN GÜNCELLEMESİ \n80 ADET PROCESS YAPTIM",
+      "parsedMetrics": {
+        "processCount": 80,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 20,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "a16dfad4-5112-4efc-9d1b-079670ca887b",
+      "created_at": "2026-06-23 16:55:25",
+      "person": "Yücel Gezgin",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "Pelikan eser güncelleme mailleri yapılıyor\nAdapte eser güncelleme çalışması yapıldı\nYerli eser bildirim girişi yapıldı\nAscap unknown eser güncelleme çalışmasına başlandı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Pelikan"
+        ]
+      }
+    },
+    {
+      "id": "070e6bf4-2a06-40a3-bd27-1fe9acd72079",
+      "created_at": "2026-06-23 16:56:27",
+      "person": "Ahmet Turan Çalışkan",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "41 adet eser bilgisi 46 adet eser güncellemesi yapılmıştır.",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 87,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "122acc9a-a0db-4343-9ee8-c71bfe232cdd",
+      "created_at": "2026-06-23 16:57:04",
+      "person": "Cahit Benek",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "- 7 eser bildirimi\n- Eser tespiti yardımlaşma\n- Üye telefon görüşmesi\n- Mazeret İzni (1SAAT 40 DK)\n-Unknown eser güncelleme liste çalışması",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 7,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 41,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Unknown / Çakışma / Eşleştirme",
+          "Toplantı & Telefon / Görüşme",
+          "İzin / Mazeret"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "268fd6f4-6b5b-4578-a44e-b3fd3d47ddbc",
+      "created_at": "2026-06-23 16:58:39",
+      "person": "Neslihan Yılmaz",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "ASCAP LİSTESİ eser unknown güncelleme\nEURUS /  UNKNOWN process güncelleme\nEURUS / Eser Güncelleme\nFESIH / mail kontrol",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Sözleşme & Hak Sahipliği",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Eurus"
+        ]
+      }
+    },
+    {
+      "id": "8b59c2d1-bf8b-4657-9b59-ea69a1141b07",
+      "created_at": "2026-06-23 16:59:16",
+      "person": "Hilal Algun",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-23",
+      "report": "49 Unknown eser Cisnet'e göre güncellendi\n65 eser processte kaydedildi",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 65,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 49,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "429d552b-0a0c-4ed2-8f41-9005347461c7",
+      "created_at": "2026-07-01 16:25:29",
+      "person": "Gizem Kurtoğlu",
+      "start_date": "2026-07-01",
+      "end_date": "2026-07-01",
+      "report": "112 eser kaydı,\n1 sözleşme,\n15 cue sheet çalışmalarım oldu",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 15,
+        "eserCount": 112,
+        "dilekceCount": 0,
+        "agreementCount": 1,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi",
+          "Sözleşme & Hak Sahipliği"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "ecad3ba2-5374-4858-96a2-63863dd707f6",
+      "created_at": "2026-07-29 17:01:01",
+      "person": "Onur İnanç",
+      "start_date": "2026-07-29",
+      "end_date": "2026-07-29",
+      "report": "10:20'ye kadar process yaptım \n10:20 - 12:00 arası toplantıdaydık,\nöğleden sonra cue sheet yaptım abi \n\nprocess ve cue sheet toplam 159 adet eser açtım...",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 159,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process",
+          "Cue Sheet",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "e01f97d4-eced-40d6-b2ed-c58266e122c5",
+      "created_at": "2026-09-10 16:57:20",
+      "person": "Onur İnanç",
+      "start_date": "2026-09-10",
+      "end_date": "2026-09-10",
+      "report": "155 ADET UNI CWR GUNCELLEMESI\n60 ADET NEIL YOUNG ESERLERİNİN GUNCELLEMESİNİ YAPTIM ABİ",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "15732f09-4df6-4edc-81be-f734dd5a911f",
+      "created_at": "2026-09-10 16:57:51",
+      "person": "Hilal Algun",
+      "start_date": "2026-09-10",
+      "end_date": "2026-09-10",
+      "report": "Es Müzik'ten gelen yeni sözleşme sisteme kaydedildi\nEs Müzik'ten gelen fesih için hukuk ile görüşüldü, Es Müzik'ten belge talep edildi\nPasaj Müzik'ten bildirim talep edildi\nSahne Sanatları'ndan gelen 2 web bildirimi sisteme kaydedildi, sorunlu 4 bildirim için mail atıldı\nUniversal CWR güncellemesinde 74 eser tamamlandı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 74,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Sözleşme & Hak Sahipliği",
+          "Dilekçe & Hukuk / TBK",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Es Müzik",
+          "Universal",
+          "Pasaj"
+        ]
+      }
+    },
+    {
+      "id": "77a0ab98-a8a7-4011-9032-8075f7522fd2",
+      "created_at": "2026-09-08 16:56:43",
+      "person": "Onur İnanç",
+      "start_date": "2026-09-08",
+      "end_date": "2026-09-08",
+      "report": "47 ADET UNKNOWN FİLM KAYDI AÇTIM \n51 ADET PELIKAN CWR GÜNCELLEME YAPTIM ABİ",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 47,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": [
+          "Pelikan"
+        ]
+      }
+    },
+    {
+      "id": "883e2372-8d8f-4234-b229-1b6886885c89",
+      "created_at": "2026-09-21 16:57:23",
+      "person": "Hilal Algun",
+      "start_date": "2026-09-21",
+      "end_date": "2026-09-21",
+      "report": "Es Müzik'ten gelen eser bildirimi kaydedildi\nTaksim'den gelen 60 bölüm cue sheet sisteme kaydedildi",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 60,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": [
+          "Taksim",
+          "Es Müzik"
+        ]
+      }
+    },
+    {
+      "id": "b3ab837d-9b51-4f7a-ab5b-c463788ee3ce",
+      "created_at": "2026-09-21 17:00:14",
+      "person": "Cahit Benek",
+      "start_date": "2026-09-16",
+      "end_date": "2026-09-16",
+      "report": "- 3 eser bildirimi\n- Üye telefon görüşmesi\n- Kürtçe üyelik belgeleri hazırlama\n- 24 film künyesi açma",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 3,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Toplantı & Telefon / Görüşme"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "e0061dcb-4850-4597-9685-b82a14fb73e9",
+      "created_at": "2026-09-23 16:57:15",
+      "person": "Hilal Algun",
+      "start_date": "2026-09-23",
+      "end_date": "2026-09-23",
+      "report": "Sahne Sanatları'ndan gelen 3 eser bildirimine istinaden kayıtlar güncellendi \nTaksim'den gelen 80 bölüm cue sheet sisteme kaydedildi",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 80,
+        "eserCount": 3,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi"
+        ],
+        "detectedPublishers": [
+          "Taksim"
+        ]
+      }
+    },
+    {
+      "id": "fa5cd5d3-9a08-4569-a466-f635513ab7e2",
+      "created_at": "2026-09-24 16:51:56",
+      "person": "Onur İnanç",
+      "start_date": "2026-09-24",
+      "end_date": "2026-09-24",
+      "report": "10 ESER GÜNCELLEME\n66 ADET PROCESS YAPTIM",
+      "parsedMetrics": {
+        "processCount": 66,
+        "cueSheetCount": 0,
+        "eserCount": 10,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Process"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "54b8bb93-10fa-40d9-96d0-51860d054bbd",
+      "created_at": "2026-09-24 16:52:02",
+      "person": "Neslihan Yılmaz",
+      "start_date": "2026-09-24",
+      "end_date": "2026-09-24",
+      "report": "Güncellenecek eserler tamamlandı (10)\nTANITIM bildirimleri sisteme işlendi.\nCALL CENTER dan iletilen bildirimler açıldı.\nFERDİ KARAMESE Program bildirimlerine başlandı (2/5)",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Tanıtım / Reklam"
+        ],
+        "detectedPublishers": []
+      }
+    },
+    {
+      "id": "39ce0729-f5f4-453d-ab3f-8c6767a4164b",
+      "created_at": "2026-09-24 14:30:46",
+      "person": "Yücel Gezgin",
+      "start_date": "2026-09-22",
+      "end_date": "2026-09-24",
+      "report": "Pelikan müzik eser güncellemeleri yapıldı\navr yüklendi\npelikan sözleşme fesih girişleri yapıldı\nkalan eser bildirimileri girildi\nsistem kapalıyken gelen güncelleme mailleri yapıldı\nreklam girişi yapıldı",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 0,
+        "eserCount": 0,
+        "dilekceCount": 0,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Eser Kaydı / Bildirimi",
+          "Sözleşme & Hak Sahipliği",
+          "Tanıtım / Reklam"
+        ],
+        "detectedPublishers": [
+          "Pelikan"
+        ]
+      }
+    },
+    {
+      "id": "860c6c75-9547-4967-b3e4-bf6baa0d64ad",
+      "created_at": "2026-09-24 16:42:50",
+      "person": "Gizem Kurtoğlu",
+      "start_date": "2026-09-24",
+      "end_date": "2026-09-24",
+      "report": "5 eser kaydı,\n5 dilekçe,\n78 cue sheet\nve bildirim istenilecek unknown eser listesi çalışmalarım oldu",
+      "parsedMetrics": {
+        "processCount": 0,
+        "cueSheetCount": 78,
+        "eserCount": 5,
+        "dilekceCount": 5,
+        "agreementCount": 0,
+        "unknownCount": 0,
+        "meetingHours": 0,
+        "detectedCategories": [
+          "Cue Sheet",
+          "Eser Kaydı / Bildirimi",
+          "Dilekçe & Hukuk / TBK",
+          "Unknown / Çakışma / Eşleştirme"
+        ],
+        "detectedPublishers": []
+      }
+    }
+  ]
+}

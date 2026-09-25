@@ -155,6 +155,8 @@ app.post('/api/persons', (req, res) => {
     targetDailyCueSheet: Number(req.body.targetDailyCueSheet) || 0,
     targetDailyEser: Number(req.body.targetDailyEser) || 0,
     notes: req.body.notes || '',
+    specialRoleOrDuty: req.body.specialRoleOrDuty || '',
+    hasCueDuty: Boolean(req.body.hasCueDuty),
   };
 
   store.persons.push(newPerson);

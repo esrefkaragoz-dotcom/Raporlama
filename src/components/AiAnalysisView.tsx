@@ -248,8 +248,22 @@ export const AiAnalysisView: React.FC<AiAnalysisViewProps> = ({
                 </div>
 
                 <div>
+                  {(currentPersonObj.specialRoleOrDuty || currentPersonObj.hasCueDuty) && (
+                    <div className="mb-2 flex flex-wrap gap-1">
+                      {currentPersonObj.specialRoleOrDuty && (
+                        <span className="px-2 py-0.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-900/40 inline-flex items-center gap-1">
+                          ⭐ {currentPersonObj.specialRoleOrDuty}
+                        </span>
+                      )}
+                      {currentPersonObj.hasCueDuty && (
+                        <span className="px-2 py-0.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 font-bold border border-indigo-200 dark:border-indigo-900/40 inline-flex items-center gap-1">
+                          ⏱️ Cue-Sheet Nöbeti (Cues)
+                        </span>
+                      )}
+                    </div>
+                  )}
                   <span className="font-bold text-slate-500 uppercase tracking-wider block mb-1">
-                    Atanan Şirket & Edisyonlar:
+                    Atanan Şirket & Edisyonlar ({currentPersonObj.assignedPublishers.length}):
                   </span>
                   <div className="flex flex-wrap gap-1">
                     {currentPersonObj.assignedPublishers.map((pub, i) => (

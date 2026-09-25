@@ -32,6 +32,9 @@ export const EditPersonModal: React.FC<EditPersonModalProps> = ({
   const [specialExpertise, setSpecialExpertise] = useState<string[]>([]);
   const [newExpertise, setNewExpertise] = useState('');
 
+  const [specialRoleOrDuty, setSpecialRoleOrDuty] = useState('');
+  const [hasCueDuty, setHasCueDuty] = useState(false);
+
   const [targetDailyProcess, setTargetDailyProcess] = useState<number | string>(50);
   const [targetDailyCueSheet, setTargetDailyCueSheet] = useState<number | string>(10);
   const [targetDailyEser, setTargetDailyEser] = useState<number | string>(30);
@@ -47,6 +50,8 @@ export const EditPersonModal: React.FC<EditPersonModalProps> = ({
       setEmail(personToEdit.email || '');
       setDepartment(personToEdit.department || 'Dokümantasyon & Reprodüksiyon');
       setTitle(personToEdit.title || 'Dokümantasyon Uzmanı');
+      setSpecialRoleOrDuty(personToEdit.specialRoleOrDuty || '');
+      setHasCueDuty(Boolean(personToEdit.hasCueDuty));
       setPrimaryDuties(personToEdit.primaryDuties || []);
       setSecondaryDuties(personToEdit.secondaryDuties || []);
       setAssignedPublishers(personToEdit.assignedPublishers || []);
@@ -60,6 +65,8 @@ export const EditPersonModal: React.FC<EditPersonModalProps> = ({
       setEmail('');
       setDepartment('Dokümantasyon & Reprodüksiyon');
       setTitle('Dokümantasyon Uzmanı');
+      setSpecialRoleOrDuty('');
+      setHasCueDuty(false);
       setPrimaryDuties(['Eser bildirimi ve tescil', 'Cue-sheet kontrolleri']);
       setSecondaryDuties(['Unknown eşleştirmeleri']);
       setAssignedPublishers(['Pelikan']);
@@ -122,6 +129,8 @@ export const EditPersonModal: React.FC<EditPersonModalProps> = ({
         email: email.trim(),
         department: department.trim(),
         title: title.trim(),
+        specialRoleOrDuty: specialRoleOrDuty.trim(),
+        hasCueDuty,
         primaryDuties,
         secondaryDuties,
         assignedPublishers,
@@ -212,6 +221,33 @@ export const EditPersonModal: React.FC<EditPersonModalProps> = ({
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+            </div>
+          </div>
+
+          {/* Official Special Role & Cue Duty (SharePoint Matrisi) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-100 dark:border-slate-700 pt-4">
+            <div>
+              <label className="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">
+                Resmi Özel Sorumluluk / Görev:
+              </label>
+              <input
+                type="text"
+                value={specialRoleOrDuty}
+                onChange={(e) => setSpecialRoleOrDuty(e.target.value)}
+                placeholder="Örn: TBK Bildirimleri, Üye Dilekçeleri, Eser Bildirimi..."
+                className="w-full px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="flex items-center sm:pt-6">
+              <label className="flex items-center space-x-2.5 cursor-pointer text-xs font-bold text-slate-700 dark:text-slate-300">
+                <input
+                  type="checkbox"
+                  checked={hasCueDuty}
+                  onChange={(e) => setHasCueDuty(e.target.checked)}
+                  className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300 dark:border-slate-600"
+                />
+                <span>Cue-Sheet Nöbeti (Cues) Sorumlusu</span>
+              </label>
             </div>
           </div>
 

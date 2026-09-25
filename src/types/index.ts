@@ -12,6 +12,8 @@ export interface Person {
   targetDailyCueSheet?: number;
   targetDailyEser?: number;
   notes?: string;
+  specialRoleOrDuty?: string;
+  hasCueDuty?: boolean;
 }
 
 export interface ParsedMetrics {

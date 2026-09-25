@@ -73,7 +73,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="relative z-10 max-w-3xl">
           <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-2.5 border border-blue-400/20">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span>Gemini 3.8 Flash AI Yönetim Paneli</span>
+            <span>MESAM Dokümantasyon AI Yönetim Paneli</span>
           </div>
           <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
             MESAM Personel Görev & Rapor Analiz Merkezi
@@ -220,6 +220,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                         <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-medium">
                           {p.title}
                         </span>
+                        {p.specialRoleOrDuty && (
+                          <span className="text-[10px] px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-900/50">
+                            ⭐ {p.specialRoleOrDuty}
+                          </span>
+                        )}
+                        {p.hasCueDuty && (
+                          <span className="text-[10px] px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 font-bold border border-indigo-200 dark:border-indigo-900/50">
+                            ⏱️ Cues
+                          </span>
+                        )}
                       </div>
                       <div className="text-xs text-slate-500 mt-1 line-clamp-1">
                         <span className="font-medium text-slate-700 dark:text-slate-300">Üstlendiği: </span>
