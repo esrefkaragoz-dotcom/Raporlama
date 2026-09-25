@@ -30,7 +30,7 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ persons, repor
     {
       id: 'welcome',
       role: 'assistant',
-      content: `Merhaba! Ben **MESAM Rapor & Görev Analiz AI Asistanı** (Gemini 3.8 Flash).
+      content: `Merhaba! Ben **MESAM Rapor & Görev Analiz AI Danışmanı**.
 
 Sistemde kayıtlı **${persons.length} personelimizin resmi görev tanımları** ve **${reports.length} adet günlük iş raporu** hafızamda yüklüdür.
 

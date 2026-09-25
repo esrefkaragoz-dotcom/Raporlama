@@ -218,12 +218,13 @@ export default function App() {
               />
             )}
 
-            {activeTab === 'ai-analysis' && (
+            {(activeTab === 'ai-analysis' || activeTab === 'chat') && (
               <AiAnalysisView
                 persons={persons}
                 reports={reports}
                 preselectedPersonName={preselectedPersonForAi}
                 onClearPreselectedPerson={() => setPreselectedPersonForAi('')}
+                initialSubTab={activeTab === 'chat' ? 'assistant' : 'individual'}
               />
             )}
 
@@ -237,10 +238,6 @@ export default function App() {
                 filterPersonName={filterPersonName}
                 onClearPersonFilter={() => setFilterPersonName('')}
               />
-            )}
-
-            {activeTab === 'chat' && (
-              <AiChatAssistant persons={persons} reports={reports} />
             )}
           </>
         )}

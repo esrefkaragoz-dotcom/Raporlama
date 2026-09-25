@@ -107,61 +107,67 @@ export const ReportsView: React.FC<ReportsViewProps> = ({
   };
 
   return (
-    <div className="space-y-6">
-      {/* Header Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
-        <div>
-          <h1 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <FileText className="w-6 h-6 text-blue-600" />
-            Gelen Günlük İş Raporları
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Toplam <span className="font-bold text-slate-900 dark:text-white">{reports.length}</span> rapor kaydı,{' '}
-            <span className="font-bold text-blue-600 dark:text-blue-400">{filteredReports.length}</span> rapor listeleniyor.
-          </p>
+    <div className="space-y-4">
+      {/* Streamlined Reports Toolbar & Filters Card */}
+      <div className="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm space-y-4">
+        {/* Top Row: Title, Quick Count & Action Buttons */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100 dark:border-slate-700/60">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/50">
+              <FileText className="w-5 h-5" />
+            </div>
+            <div>
+              <h1 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                Günlük İş Raporları
+              </h1>
+              <p className="text-xs text-slate-500">
+                <span className="font-semibold text-slate-700 dark:text-slate-300">{reports.length}</span> toplam rapor,{' '}
+                <span className="font-semibold text-blue-600 dark:text-blue-400">{filteredReports.length}</span> eşleşen
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-2 shrink-0">
+            <button
+              onClick={handleExportCsv}
+              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-700/60 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold transition-all cursor-pointer"
+              title="CSV / Excel Tablosu İndir"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>CSV İndir</span>
+            </button>
+
+            <button
+              onClick={onAddNewReport}
+              className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
+            >
+              <Plus className="w-3.5 h-3.5" />
+              <span>Yeni Rapor</span>
+            </button>
+          </div>
         </div>
 
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={handleExportCsv}
-            className="flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-semibold transition-all"
-            title="CSV / Excel Tablosu İndir"
-          >
-            <Download className="w-4 h-4" />
-            <span>CSV İndir</span>
-          </button>
-
-          <button
-            onClick={onAddNewReport}
-            className="flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold shadow transition-all"
-          >
-            <Plus className="w-4 h-4" />
-            <span>Yeni Rapor Ekle</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Filter Controls Card */}
-      <div className="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm space-y-3">
-        <div className="flex flex-col md:flex-row gap-3">
+        {/* Filters Row: Compact and Modern */}
+        <div className="flex flex-col md:flex-row gap-2.5">
           {/* Text Search */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
+            <Search className="w-4 h-4 absolute left-3.5 top-2.5 text-slate-400" />
             <input
               type="text"
               placeholder="Rapor içeriğinde veya kişi adında ara..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-400"
             />
           </div>
 
-          {/* Person Selector */}
-          <div className="sm:w-60">
+          {/* Filter Dropdowns Group */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Person Selector */}
             <select
               value={selectedPerson}
               onChange={(e) => setSelectedPerson(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
             >
               <option value="all">Tüm Kişiler ({persons.length})</option>
               {persons.map((p) => (
@@ -170,82 +176,73 @@ export const ReportsView: React.FC<ReportsViewProps> = ({
                 </option>
               ))}
             </select>
-          </div>
-        </div>
 
-        {/* Second row of filters */}
-        <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-100 dark:border-slate-700/60 text-xs">
-          {/* Category Filter */}
-          <div className="flex items-center space-x-1.5">
-            <Filter className="w-3.5 h-3.5 text-slate-400" />
+            {/* Category Filter */}
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-2.5 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 focus:outline-none"
+              className="px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 focus:outline-none"
             >
-              <option value="all">Tüm İş Kategorileri</option>
+              <option value="all">Tüm Kategoriler</option>
               {allCategories.map((c) => (
                 <option key={c} value={c}>
                   {c}
                 </option>
               ))}
             </select>
-          </div>
 
-          {/* Publisher Filter */}
-          <div className="flex items-center space-x-1.5">
-            <Building2 className="w-3.5 h-3.5 text-slate-400" />
+            {/* Publisher Filter */}
             <select
               value={selectedPublisher}
               onChange={(e) => setSelectedPublisher(e.target.value)}
-              className="px-2.5 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 focus:outline-none"
+              className="px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 focus:outline-none"
             >
-              <option value="all">Tüm Edisyon / Şirketler</option>
+              <option value="all">Tüm Şirketler</option>
               {allPublishers.map((pub) => (
                 <option key={pub} value={pub}>
                   {pub}
                 </option>
               ))}
             </select>
-          </div>
 
-          {/* Date range */}
-          <div className="flex items-center space-x-1">
-            <Calendar className="w-3.5 h-3.5 text-slate-400" />
-            <input
-              type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              className="px-2 py-1 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300"
-              placeholder="Başlangıç"
-            />
-            <span className="text-slate-400">-</span>
-            <input
-              type="date"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              className="px-2 py-1 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300"
-              placeholder="Bitiş"
-            />
-          </div>
+            {/* Date range inputs */}
+            <div className="flex items-center space-x-1 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-2 py-1 rounded-xl text-xs">
+              <Calendar className="w-3 h-3 text-slate-400" />
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className="bg-transparent text-xs text-slate-700 dark:text-slate-300 outline-none w-24"
+                title="Başlangıç Tarihi"
+              />
+              <span className="text-slate-400">-</span>
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                className="bg-transparent text-xs text-slate-700 dark:text-slate-300 outline-none w-24"
+                title="Bitiş Tarihi"
+              />
+            </div>
 
-          {/* Reset Filters */}
-          {(searchTerm || selectedPerson !== 'all' || selectedCategory !== 'all' || selectedPublisher !== 'all' || startDate || endDate) && (
-            <button
-              onClick={() => {
-                setSearchTerm('');
-                setSelectedPerson('all');
-                setSelectedCategory('all');
-                setSelectedPublisher('all');
-                setStartDate('');
-                setEndDate('');
-                if (onClearPersonFilter) onClearPersonFilter();
-              }}
-              className="text-xs text-blue-600 hover:underline font-semibold ml-auto"
-            >
-              Filtreleri Temizle
-            </button>
-          )}
+            {/* Reset Filters Button */}
+            {(searchTerm || selectedPerson !== 'all' || selectedCategory !== 'all' || selectedPublisher !== 'all' || startDate || endDate) && (
+              <button
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedPerson('all');
+                  setSelectedCategory('all');
+                  setSelectedPublisher('all');
+                  setStartDate('');
+                  setEndDate('');
+                  if (onClearPersonFilter) onClearPersonFilter();
+                }}
+                className="px-2.5 py-1 text-xs text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg font-semibold transition-colors cursor-pointer"
+              >
+                Filtreleri Sıfırla
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

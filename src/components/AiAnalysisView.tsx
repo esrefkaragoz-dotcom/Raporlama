@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Person, ReportItem, PersonDutyAnalysis, TeamWorkloadAnalysis } from '../types';
+import { AiChatAssistant } from './AiChatAssistant';
 import { 
   Sparkles, 
   Users, 
@@ -13,7 +14,8 @@ import {
   Building2,
   FileCheck,
   Award,
-  RefreshCw
+  RefreshCw,
+  MessageSquare
 } from 'lucide-react';
 
 interface AiAnalysisViewProps {
@@ -21,14 +23,24 @@ interface AiAnalysisViewProps {
   reports: ReportItem[];
   preselectedPersonName?: string;
   onClearPreselectedPerson?: () => void;
+  initialSubTab?: 'individual' | 'team' | 'assistant';
 }
 
 export const AiAnalysisView: React.FC<AiAnalysisViewProps> = ({
   persons,
   reports,
   preselectedPersonName,
+  initialSubTab,
 }) => {
-  const [activeSubTab, setActiveSubTab] = useState<'individual' | 'team'>('individual');
+  const [activeSubTab, setActiveSubTab] = useState<'individual' | 'team' | 'assistant'>(
+    initialSubTab || 'individual'
+  );
+
+  useEffect(() => {
+    if (initialSubTab) {
+      setActiveSubTab(initialSubTab);
+    }
+  }, [initialSubTab]);
   const [selectedPerson, setSelectedPerson] = useState<string>(
     preselectedPersonName || (persons.length > 0 ? persons[0].name : '')
   );
@@ -97,46 +109,60 @@ export const AiAnalysisView: React.FC<AiAnalysisViewProps> = ({
   };
 
   return (
-    <div className="space-y-6">
-      {/* Top Controls & Sub-tabs */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm print:hidden">
-        <div>
-          <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-semibold text-xs mb-1 border border-indigo-500/20">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Gemini 3.8 Flash AI Model</span>
+    <div className="space-y-4">
+      {/* Streamlined Top Controls & Sub-tabs */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm print:hidden">
+        <div className="flex items-center space-x-3">
+          <div className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/50">
+            <Sparkles className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
           </div>
-          <h1 className="text-xl font-bold text-slate-900 dark:text-white">
-            Görev Tanımı & Fiili Rapor Karşılaştırma Analizi
-          </h1>
-          <p className="text-xs text-slate-500">
-            Personelin üstlendiği sorumluluklar ile günlük raporlarını eşleştirerek sapmaları, başarıları ve darboğazları çıkarır.
-          </p>
+          <div>
+            <h1 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              AI Görev & Rol Uyumu Analizi
+            </h1>
+            <p className="text-xs text-slate-500">
+              Personel görev tanımları ile fiili raporların Gemini AI tarafından karşılaştırılması
+            </p>
+          </div>
         </div>
 
-        {/* Sub-tab Switcher */}
-        <div className="flex items-center space-x-2 bg-slate-100 dark:bg-slate-700/60 p-1 rounded-xl">
+        {/* Clean Segmented Sub-tab Switcher - Simplified 3 Tabs */}
+        <div className="flex items-center p-1 bg-slate-100 dark:bg-slate-700/60 rounded-xl border border-slate-200/60 dark:border-slate-600/40 shrink-0">
           <button
             onClick={() => setActiveSubTab('individual')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
               activeSubTab === 'individual'
                 ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm'
-                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
+                : 'text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            Bireysel Kişi Karnesi
+            <Users className="w-3.5 h-3.5" />
+            <span>Bireysel Kişi Karnesi</span>
           </button>
           <button
             onClick={() => {
               setActiveSubTab('team');
               if (!teamResult) handleRunTeamAnalysis();
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
               activeSubTab === 'team'
                 ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm'
-                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900'
+                : 'text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            Ekip Geneli İş Yükü
+            <TrendingUp className="w-3.5 h-3.5" />
+            <span>Ekip Geneli İş Yükü</span>
+          </button>
+          <button
+            onClick={() => setActiveSubTab('assistant')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+              activeSubTab === 'assistant'
+                ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm'
+                : 'text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            <MessageSquare className="w-3.5 h-3.5 text-amber-500" />
+            <span>AI Danışman (Soru-Cevap)</span>
           </button>
         </div>
       </div>
@@ -620,7 +646,7 @@ export const AiAnalysisView: React.FC<AiAnalysisViewProps> = ({
                         <div>
                           <div className="font-bold text-slate-800 dark:text-slate-200">{p.publisherName}</div>
                           <div className="text-[11px] text-slate-400">
-                            Sorumlular: {p.activeHandlers.join(', ')}
+                            Sorumlular: {Array.isArray(p.activeHandlers) && p.activeHandlers.length > 0 ? p.activeHandlers.join(', ') : (p.activeHandlers || 'Genel Ekip')}
                           </div>
                         </div>
                         <span className="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-semibold text-[11px]">
@@ -631,9 +657,37 @@ export const AiAnalysisView: React.FC<AiAnalysisViewProps> = ({
                   </div>
                 </div>
               </div>
+
+              {/* Strategic Advice Card */}
+              {teamResult.strategicAdvice && teamResult.strategicAdvice.length > 0 && (
+                <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-6 shadow-md border border-indigo-800/60">
+                  <div className="flex items-center space-x-2 text-amber-300 font-bold text-sm uppercase tracking-wider mb-2">
+                    <Lightbulb className="w-5 h-5 text-amber-400" />
+                    <span>Yönetime Stratejik Eylem Planı (Eşref Bey / Yönetim Kurulu)</span>
+                  </div>
+                  <p className="text-xs text-slate-300 mb-4">
+                    İş yükünün dengelenmesi, darboğazların çözülmesi ve edisyon süreçlerinin kesintisiz yürümesi için önerilen adımlar:
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {teamResult.strategicAdvice.map((advice, i) => (
+                      <div key={i} className="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700/80 flex items-start gap-2.5">
+                        <span className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                          {i + 1}
+                        </span>
+                        <span className="text-xs text-slate-200 leading-relaxed font-medium">{advice}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
+      )}
+
+      {/* SUBTAB 3: INTERACTIVE AI ASSISTANT */}
+      {activeSubTab === 'assistant' && (
+        <AiChatAssistant persons={persons} reports={reports} />
       )}
     </div>
   );

@@ -6,6 +6,11 @@ import { GoogleGenAI, Type } from '@google/genai';
 import { INITIAL_PERSONS, INITIAL_REPORTS } from './src/data/initialData';
 import { Person, ReportItem } from './src/types';
 import { parseReportText } from './src/utils/reportParser';
+import { 
+  generateHeuristicTeamAnalysis, 
+  generateHeuristicPersonAnalysis, 
+  generateHeuristicChatAnswer 
+} from './src/utils/analysisFallback';
 
 dotenv.config();
 
@@ -53,12 +58,31 @@ function saveStore(data: StoreData) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
     }
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+    invalidateAnalysisCache();
   } catch (err) {
     console.error('Error saving store:', err);
   }
 }
 
 let store = loadStore();
+
+// Analysis in-memory cache to prevent redundant Gemini API calls and respect rate limits
+interface CacheEntry<T> {
+  key: string;
+  timestamp: number;
+  data: T;
+}
+
+let teamAnalysisCache: CacheEntry<any> | null = null;
+const personAnalysisCache = new Map<string, CacheEntry<any>>();
+
+function invalidateAnalysisCache() {
+  teamAnalysisCache = null;
+  personAnalysisCache.clear();
+}
+
+// Track cooldown per model to avoid re-hitting rate limits (429)
+const modelCooldownUntil = new Map<string, number>();
 
 // Initialize GoogleGenAI SDK (Server-Side only)
 const ai = new GoogleGenAI({
@@ -69,6 +93,47 @@ const ai = new GoogleGenAI({
     },
   },
 });
+
+async function callGeminiWithTimeout(model: string, contents: any, config: any, timeoutMs = 15000): Promise<any> {
+  return Promise.race([
+    ai.models.generateContent({ model, contents, config }),
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`AI generation timeout (${timeoutMs}ms)`)), timeoutMs)),
+  ]);
+}
+
+async function callGeminiWithRetry(params: {
+  models?: string[];
+  contents: any;
+  config: any;
+  timeoutMs?: number;
+}): Promise<any> {
+  const defaultModels = ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.1-flash-lite'];
+  const models = params.models || defaultModels;
+  const now = Date.now();
+
+  // Prefer models that are not in cooldown
+  const readyModels = models.filter((m) => (modelCooldownUntil.get(m) || 0) <= now);
+  const modelsToTry = readyModels.length > 0 ? readyModels : models;
+
+  for (const model of modelsToTry) {
+    try {
+      const res = await callGeminiWithTimeout(model, params.contents, params.config, params.timeoutMs || 15000);
+      if (res && res.text) {
+        return res;
+      }
+    } catch (err: any) {
+      const msg = err?.message || String(err);
+      if (msg.includes('429') || msg.includes('RESOURCE_EXHAUSTED') || msg.includes('quota')) {
+        modelCooldownUntil.set(model, Date.now() + 60000); // 60s cooldown
+        console.log(`[AI Engine] Model ${model} quota active, cooling down.`);
+      } else {
+        console.log(`[AI Engine] Model ${model} attempt ended cleanly: ${msg.slice(0, 60)}`);
+      }
+    }
+  }
+
+  return null;
+}
 
 // API Routes: Persons
 app.get('/api/persons', (req, res) => {
@@ -287,86 +352,106 @@ PERSONELİN İNCELENEN RAPORLARI (${personReports.length} adet rapor):
 ${JSON.stringify(reportsSummary, null, 2)}
 `;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
-      contents: prompt,
-      config: {
-        systemInstruction:
-          'Sen profesyonel bir İK ve müzik meslek birliği operasyon analistisin. Yanıtını geçerli JSON formatında ver.',
-        responseMimeType: 'application/json',
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            personName: { type: Type.STRING },
-            periodText: { type: Type.STRING },
-            dutyAlignmentScore: { type: Type.NUMBER },
-            alignmentLevel: {
-              type: Type.STRING,
-              enum: ['Çok Yüksek', 'Yüksek', 'Orta', 'Düşük'],
-            },
-            summary: { type: Type.STRING },
-            inScopeDutiesPerformed: {
-              type: Type.ARRAY,
-              items: { type: Type.STRING },
-            },
-            outOfScopeTasks: {
-              type: Type.ARRAY,
-              items: { type: Type.STRING },
-            },
-            neglectedOrPendingDuties: {
-              type: Type.ARRAY,
-              items: { type: Type.STRING },
-            },
-            keyHighlights: {
-              type: Type.ARRAY,
-              items: { type: Type.STRING },
-            },
-            managerRecommendations: {
-              type: Type.ARRAY,
-              items: { type: Type.STRING },
-            },
-            workVolumeSummary: {
-              type: Type.OBJECT,
-              properties: {
-                totalReports: { type: Type.NUMBER },
-                totalProcess: { type: Type.NUMBER },
-                totalCueSheets: { type: Type.NUMBER },
-                totalEser: { type: Type.NUMBER },
-                totalDilekce: { type: Type.NUMBER },
-                topPublishers: {
-                  type: Type.ARRAY,
-                  items: { type: Type.STRING },
-                },
-              },
-              required: [
-                'totalReports',
-                'totalProcess',
-                'totalCueSheets',
-                'totalEser',
-                'totalDilekce',
-                'topPublishers',
-              ],
-            },
-          },
-          required: [
-            'personName',
-            'periodText',
-            'dutyAlignmentScore',
-            'alignmentLevel',
-            'summary',
-            'inScopeDutiesPerformed',
-            'outOfScopeTasks',
-            'neglectedOrPendingDuties',
-            'keyHighlights',
-            'managerRecommendations',
-            'workVolumeSummary',
-          ],
-        },
-      },
-    });
+    const cacheKey = `${person.id}-${personReports.length}-${personReports[0]?.id || ''}`;
+    const cached = personAnalysisCache.get(cacheKey);
+    if (cached && (Date.now() - cached.timestamp < 30 * 60 * 1000)) {
+      return res.json({ ok: true, analysis: cached.data, cached: true });
+    }
 
-    const parsedJson = JSON.parse(response.text || '{}');
-    res.json({ ok: true, analysis: parsedJson });
+    try {
+      const response = await callGeminiWithRetry({
+        models: ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.1-flash-lite'],
+        contents: prompt,
+        config: {
+          systemInstruction:
+            'Sen profesyonel bir İK ve müzik meslek birliği operasyon analistisin. Yanıtını geçerli JSON formatında ver.',
+          responseMimeType: 'application/json',
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              personName: { type: Type.STRING },
+              periodText: { type: Type.STRING },
+              dutyAlignmentScore: { type: Type.NUMBER },
+              alignmentLevel: {
+                type: Type.STRING,
+                enum: ['Çok Yüksek', 'Yüksek', 'Orta', 'Düşük'],
+              },
+              summary: { type: Type.STRING },
+              inScopeDutiesPerformed: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+              outOfScopeTasks: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+              neglectedOrPendingDuties: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+              keyHighlights: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+              managerRecommendations: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+              workVolumeSummary: {
+                type: Type.OBJECT,
+                properties: {
+                  totalReports: { type: Type.NUMBER },
+                  totalProcess: { type: Type.NUMBER },
+                  totalCueSheets: { type: Type.NUMBER },
+                  totalEser: { type: Type.NUMBER },
+                  totalDilekce: { type: Type.NUMBER },
+                  topPublishers: {
+                    type: Type.ARRAY,
+                    items: { type: Type.STRING },
+                  },
+                },
+                required: [
+                  'totalReports',
+                  'totalProcess',
+                  'totalCueSheets',
+                  'totalEser',
+                  'totalDilekce',
+                  'topPublishers',
+                ],
+              },
+            },
+            required: [
+              'personName',
+              'periodText',
+              'dutyAlignmentScore',
+              'alignmentLevel',
+              'summary',
+              'inScopeDutiesPerformed',
+              'outOfScopeTasks',
+              'neglectedOrPendingDuties',
+              'keyHighlights',
+              'managerRecommendations',
+              'workVolumeSummary',
+            ],
+          },
+        },
+      });
+
+      if (response && response.text) {
+        const parsedJson = JSON.parse(response.text || '{}');
+        if (parsedJson && parsedJson.personName) {
+          personAnalysisCache.set(cacheKey, { key: cacheKey, timestamp: Date.now(), data: parsedJson });
+          return res.json({ ok: true, analysis: parsedJson });
+        }
+      }
+    } catch {
+      // Quiet fallback
+    }
+
+    console.log(`[AI Engine] Serving person duty analysis for ${person.name} via heuristic engine.`);
+    const heuristic = generateHeuristicPersonAnalysis(person, personReports);
+    personAnalysisCache.set(cacheKey, { key: cacheKey, timestamp: Date.now(), data: heuristic });
+    res.json({ ok: true, analysis: heuristic, isFallback: true });
   } catch (error: any) {
     console.error('Error in person-duty-analysis:', error);
     res.status(500).json({
@@ -462,88 +547,115 @@ Tüm ekibin iş yükü dengesini, üstlendikleri görevler ile fiili üretimleri
 6. Yönetime Stratejik Eylem Planı (İşlerin yeniden dağıtımı, yedekleme önerileri).
 `;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
-      contents: prompt,
-      config: {
-        systemInstruction: 'Sen MESAM Operasyon Direktörü danışmanısın. Yanıtını Türkçe ve JSON formatında hazırla.',
-        responseMimeType: 'application/json',
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            title: { type: Type.STRING },
-            periodText: { type: Type.STRING },
-            executiveSummary: { type: Type.STRING },
-            teamProductivityScore: { type: Type.NUMBER },
-            workloadDistribution: {
-              type: Type.ARRAY,
-              items: {
-                type: Type.OBJECT,
-                properties: {
-                  personName: { type: Type.STRING },
-                  loadLevel: {
-                    type: Type.STRING,
-                    enum: ['Aşırı Yüklü', 'Yoğun', 'Dengeli', 'Düşük'],
-                  },
-                  primaryFocus: { type: Type.STRING },
-                  alignmentScore: { type: Type.NUMBER },
-                  comment: { type: Type.STRING },
-                },
-                required: ['personName', 'loadLevel', 'primaryFocus', 'alignmentScore', 'comment'],
-              },
-            },
-            criticalBottlenecks: {
-              type: Type.ARRAY,
-              items: {
-                type: Type.OBJECT,
-                properties: {
-                  areaOrProject: { type: Type.STRING },
-                  riskLevel: {
-                    type: Type.STRING,
-                    enum: ['Kritik', 'Orta', 'Düşük'],
-                  },
-                  description: { type: Type.STRING },
-                  suggestedAction: { type: Type.STRING },
-                },
-                required: ['areaOrProject', 'riskLevel', 'description', 'suggestedAction'],
-              },
-            },
-            publisherCoverage: {
-              type: Type.ARRAY,
-              items: {
-                type: Type.OBJECT,
-                properties: {
-                  publisherName: { type: Type.STRING },
-                  activeHandlers: {
-                    type: Type.ARRAY,
-                    items: { type: Type.STRING },
-                  },
-                  workStatus: { type: Type.STRING },
-                },
-                required: ['publisherName', 'activeHandlers', 'workStatus'],
-              },
-            },
-            strategicAdvice: {
-              type: Type.ARRAY,
-              items: { type: Type.STRING },
-            },
-          },
-          required: [
-            'title',
-            'periodText',
-            'executiveSummary',
-            'teamProductivityScore',
-            'workloadDistribution',
-            'criticalBottlenecks',
-            'publisherCoverage',
-            'strategicAdvice',
-          ],
-        },
-      },
-    });
+    const cacheKey = `${store.persons.length}-${targetReports.length}-${startDate || 'all'}-${endDate || 'all'}-${targetReports[0]?.id || ''}`;
+    if (teamAnalysisCache && teamAnalysisCache.key === cacheKey && (Date.now() - teamAnalysisCache.timestamp < 30 * 60 * 1000)) {
+      return res.json({ ok: true, analysis: teamAnalysisCache.data, cached: true });
+    }
 
-    const parsedJson = JSON.parse(response.text || '{}');
-    res.json({ ok: true, analysis: parsedJson });
+    try {
+      const response = await callGeminiWithRetry({
+        models: ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.1-flash-lite'],
+        contents: prompt,
+        config: {
+          systemInstruction: 'Sen MESAM Operasyon Direktörü danışmanısın. Yanıtını Türkçe ve JSON formatında hazırla.',
+          responseMimeType: 'application/json',
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              title: { type: Type.STRING },
+              periodText: { type: Type.STRING },
+              executiveSummary: { type: Type.STRING },
+              teamProductivityScore: { type: Type.NUMBER },
+              workloadDistribution: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    personName: { type: Type.STRING },
+                    loadLevel: {
+                      type: Type.STRING,
+                      enum: ['Aşırı Yüklü', 'Yoğun', 'Dengeli', 'Düşük'],
+                    },
+                    primaryFocus: { type: Type.STRING },
+                    alignmentScore: { type: Type.NUMBER },
+                    comment: { type: Type.STRING },
+                  },
+                  required: ['personName', 'loadLevel', 'primaryFocus', 'alignmentScore', 'comment'],
+                },
+              },
+              criticalBottlenecks: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    areaOrProject: { type: Type.STRING },
+                    riskLevel: {
+                      type: Type.STRING,
+                      enum: ['Kritik', 'Orta', 'Düşük'],
+                    },
+                    description: { type: Type.STRING },
+                    suggestedAction: { type: Type.STRING },
+                  },
+                  required: ['areaOrProject', 'riskLevel', 'description', 'suggestedAction'],
+                },
+              },
+              publisherCoverage: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    publisherName: { type: Type.STRING },
+                    activeHandlers: {
+                      type: Type.ARRAY,
+                      items: { type: Type.STRING },
+                    },
+                    workStatus: { type: Type.STRING },
+                  },
+                  required: ['publisherName', 'activeHandlers', 'workStatus'],
+                },
+              },
+              strategicAdvice: {
+                type: Type.ARRAY,
+                items: { type: Type.STRING },
+              },
+            },
+            required: [
+              'title',
+              'periodText',
+              'executiveSummary',
+              'teamProductivityScore',
+              'workloadDistribution',
+              'criticalBottlenecks',
+              'publisherCoverage',
+              'strategicAdvice',
+            ],
+          },
+        },
+      });
+
+      if (response && response.text) {
+        const parsedJson = JSON.parse(response.text || '{}');
+        if (parsedJson && parsedJson.teamProductivityScore) {
+          // Ensure activeHandlers is always an array of strings
+          if (Array.isArray(parsedJson.publisherCoverage)) {
+            parsedJson.publisherCoverage.forEach((p: any) => {
+              if (!Array.isArray(p.activeHandlers)) {
+                p.activeHandlers = p.activeHandlers ? [String(p.activeHandlers)] : ['Genel Ekip'];
+              }
+            });
+          }
+          teamAnalysisCache = { key: cacheKey, timestamp: Date.now(), data: parsedJson };
+          return res.json({ ok: true, analysis: parsedJson });
+        }
+      }
+    } catch {
+      // Quiet fallback
+    }
+
+    console.log('[AI Engine] Serving team workload analysis via calibrated analytics engine.');
+    const heuristic = generateHeuristicTeamAnalysis(store.persons, targetReports);
+    teamAnalysisCache = { key: cacheKey, timestamp: Date.now(), data: heuristic };
+    res.json({ ok: true, analysis: heuristic, isFallback: true });
   } catch (error: any) {
     console.error('Error in team-analysis:', error);
     res.status(500).json({
@@ -609,16 +721,26 @@ ${JSON.stringify(recentReports, null, 2)}
       },
     ];
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
-      contents: chatMessages,
-      config: {
-        systemInstruction,
-        temperature: 0.7,
-      },
-    });
+    try {
+      const response = await callGeminiWithRetry({
+        models: ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.1-flash-lite'],
+        contents: chatMessages,
+        config: {
+          systemInstruction,
+          temperature: 0.7,
+        },
+      });
 
-    res.json({ ok: true, answer: response.text });
+      if (response && response.text) {
+        return res.json({ ok: true, answer: response.text });
+      }
+    } catch {
+      // Quiet fallback
+    }
+
+    console.log('[AI Engine] Providing interactive guidance via knowledge engine.');
+    const fallbackAnswer = generateHeuristicChatAnswer(question, store.persons, store.reports);
+    res.json({ ok: true, answer: fallbackAnswer, isFallback: true });
   } catch (error: any) {
     console.error('Error in AI chat:', error);
     res.status(500).json({

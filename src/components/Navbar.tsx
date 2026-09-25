@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   BarChart3, 
   Users, 
   Sparkles, 
   FileText, 
   MessageSquare, 
-  PlusCircle, 
+  Plus, 
   UploadCloud, 
   RotateCcw,
-  Music2
+  Music2,
+  MoreHorizontal
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -30,173 +31,155 @@ export const Navbar: React.FC<NavbarProps> = ({
   reportsCount,
   personsCount,
 }) => {
+  const [isActionsOpen, setIsActionsOpen] = useState(false);
+  const actionsRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (actionsRef.current && !actionsRef.current.contains(event.target as Node)) {
+        setIsActionsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const isTabActive = (id: string) => {
+    if (id === 'ai-analysis') {
+      return activeTab === 'ai-analysis' || activeTab === 'chat';
+    }
+    return activeTab === id;
+  };
+
+  const navItems: { id: 'dashboard' | 'persons' | 'reports' | 'ai-analysis'; label: string; count?: number; icon: React.ReactNode; isAi?: boolean }[] = [
+    { id: 'dashboard', label: 'Genel Bakış', icon: <BarChart3 className="w-4 h-4" /> },
+    { id: 'persons', label: 'Personel', count: personsCount, icon: <Users className="w-4 h-4" /> },
+    { id: 'reports', label: 'Raporlar', count: reportsCount, icon: <FileText className="w-4 h-4" /> },
+    { id: 'ai-analysis', label: 'AI Analiz & Danışman', icon: <Sparkles className="w-4 h-4 text-amber-300" />, isAi: true },
+  ];
+
   return (
-    <header className="sticky top-0 z-40 bg-slate-900 border-b border-slate-800 text-white shadow-xl">
+    <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo & Brand */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-blue-600 to-indigo-700 flex items-center justify-center shadow-lg shadow-indigo-500/25 border border-indigo-400/30">
-              <Music2 className="w-5 h-5 text-white" />
+        <div className="flex items-center justify-between h-15">
+          {/* Logo & Brand - Minimalist & Clean */}
+          <div 
+            onClick={() => setActiveTab('dashboard')}
+            className="flex items-center space-x-2.5 cursor-pointer group shrink-0"
+          >
+            <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:bg-blue-500 transition-colors">
+              <Music2 className="w-4 h-4 text-white" />
             </div>
-            <div>
-              <div className="flex items-center space-x-2">
-                <span className="font-extrabold text-base tracking-tight text-white">
-                  MESAM <span className="text-blue-400 font-semibold">Rapor & Görev Analiz</span>
-                </span>
-                <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-blue-400" />
-                  Gemini 3.8 AI
-                </span>
-              </div>
-              <p className="text-xs text-slate-400 hidden sm:block">
-                Telif & Dokümantasyon Personel Görev - Rapor Uyumu Sistemi
-              </p>
+            <div className="flex items-baseline space-x-1.5">
+              <span className="font-bold text-base tracking-tight text-white">MESAM</span>
+              <span className="text-slate-400 font-normal text-xs">Analiz AI</span>
             </div>
           </div>
 
-          {/* Nav Tabs */}
-          <nav className="hidden md:flex items-center space-x-1">
-            <button
-              onClick={() => setActiveTab('dashboard')}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                activeTab === 'dashboard'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              <BarChart3 className="w-4 h-4" />
-              <span>Genel Bakış</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('persons')}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                activeTab === 'persons'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              <Users className="w-4 h-4" />
-              <span>Personel & Görevler</span>
-              <span className="text-xs px-1.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                {personsCount}
-              </span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('ai-analysis')}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                activeTab === 'ai-analysis'
-                  ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-md'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              <Sparkles className="w-4 h-4 text-amber-300" />
-              <span>AI Görev Analizi</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('reports')}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                activeTab === 'reports'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              <FileText className="w-4 h-4" />
-              <span>Gelen Raporlar</span>
-              <span className="text-xs px-1.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                {reportsCount}
-              </span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('chat')}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                activeTab === 'chat'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>AI Asistan</span>
-            </button>
+          {/* Central Segmented Nav Tabs - Clean and Compact */}
+          <nav className="hidden md:flex items-center p-1 bg-slate-800/80 rounded-xl border border-slate-700/60">
+            {navItems.map((item) => {
+              const isActive = isTabActive(item.id);
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveTab(item.id)}
+                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    isActive
+                      ? 'bg-blue-600 text-white shadow-sm'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40'
+                  }`}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                  {typeof item.count === 'number' && (
+                    <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-medium ${
+                      isActive 
+                        ? 'bg-blue-700 text-blue-100' 
+                        : 'bg-slate-700 text-slate-300'
+                    }`}>
+                      {item.count}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </nav>
 
-          {/* Actions */}
+          {/* Right Header Actions - Clean Single Button + Compact Menu */}
           <div className="flex items-center space-x-2">
             <button
               onClick={onOpenNewReport}
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all"
+              className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
               title="Yeni Rapor Gir"
             >
-              <PlusCircle className="w-4 h-4" />
-              <span className="hidden sm:inline">Rapor Ekle</span>
+              <Plus className="w-3.5 h-3.5" />
+              <span>Rapor Ekle</span>
             </button>
 
-            <button
-              onClick={onOpenImport}
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 transition-all"
-              title="Dışarıdan Toplu Rapor İçe Aktar"
-            >
-              <UploadCloud className="w-4 h-4" />
-              <span className="hidden sm:inline">İçe Aktar</span>
-            </button>
+            {/* More Actions Dropdown */}
+            <div className="relative" ref={actionsRef}>
+              <button
+                onClick={() => setIsActionsOpen(!isActionsOpen)}
+                className="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 border border-slate-700/80 transition-colors cursor-pointer"
+                title="Diğer İşlemler"
+                aria-label="Diğer İşlemler"
+              >
+                <MoreHorizontal className="w-4 h-4" />
+              </button>
 
-            <button
-              onClick={onResetData}
-              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 border border-slate-700 transition-all"
-              title="Varsayılan Verileri Geri Yükle"
-            >
-              <RotateCcw className="w-4 h-4" />
-            </button>
+              {isActionsOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-1.5 z-50 text-xs animate-in fade-in zoom-in-95 duration-100">
+                  <div className="px-3 py-1.5 text-[11px] font-semibold text-slate-400 border-b border-slate-700/60 uppercase tracking-wider">
+                    Sistem Araçları
+                  </div>
+                  <button
+                    onClick={() => {
+                      setIsActionsOpen(false);
+                      onOpenImport();
+                    }}
+                    className="w-full px-3 py-2 text-left flex items-center space-x-2.5 text-slate-200 hover:bg-slate-700/70 transition-colors"
+                  >
+                    <UploadCloud className="w-4 h-4 text-blue-400" />
+                    <span>Toplu Rapor İçe Aktar (CSV)</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsActionsOpen(false);
+                      onResetData();
+                    }}
+                    className="w-full px-3 py-2 text-left flex items-center space-x-2.5 text-rose-300 hover:bg-slate-700/70 transition-colors"
+                  >
+                    <RotateCcw className="w-4 h-4 text-rose-400" />
+                    <span>Başlangıç Verilerine Sıfırla</span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Mobile Navigation bar */}
-        <div className="flex md:hidden overflow-x-auto py-2 space-x-2 border-t border-slate-800">
-          <button
-            onClick={() => setActiveTab('dashboard')}
-            className={`px-2.5 py-1.5 rounded-md text-xs font-medium whitespace-nowrap ${
-              activeTab === 'dashboard' ? 'bg-blue-600 text-white' : 'text-slate-400'
-            }`}
-          >
-            Genel Bakış
-          </button>
-          <button
-            onClick={() => setActiveTab('persons')}
-            className={`px-2.5 py-1.5 rounded-md text-xs font-medium whitespace-nowrap ${
-              activeTab === 'persons' ? 'bg-blue-600 text-white' : 'text-slate-400'
-            }`}
-          >
-            Personel ({personsCount})
-          </button>
-          <button
-            onClick={() => setActiveTab('ai-analysis')}
-            className={`px-2.5 py-1.5 rounded-md text-xs font-medium whitespace-nowrap flex items-center gap-1 ${
-              activeTab === 'ai-analysis' ? 'bg-indigo-600 text-white' : 'text-slate-400'
-            }`}
-          >
-            <Sparkles className="w-3 h-3 text-amber-300" />
-            AI Analizi
-          </button>
-          <button
-            onClick={() => setActiveTab('reports')}
-            className={`px-2.5 py-1.5 rounded-md text-xs font-medium whitespace-nowrap ${
-              activeTab === 'reports' ? 'bg-blue-600 text-white' : 'text-slate-400'
-            }`}
-          >
-            Raporlar ({reportsCount})
-          </button>
-          <button
-            onClick={() => setActiveTab('chat')}
-            className={`px-2.5 py-1.5 rounded-md text-xs font-medium whitespace-nowrap ${
-              activeTab === 'chat' ? 'bg-blue-600 text-white' : 'text-slate-400'
-            }`}
-          >
-            AI Asistan
-          </button>
+        {/* Mobile Navigation Bar */}
+        <div className="flex md:hidden overflow-x-auto py-2 space-x-1.5 border-t border-slate-800/80 scrollbar-none">
+          {navItems.map((item) => {
+            const isActive = isTabActive(item.id);
+            return (
+              <button
+                key={item.id}
+                onClick={() => setActiveTab(item.id)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 ${
+                  isActive ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200 bg-slate-800/50'
+                }`}
+              >
+                {item.icon}
+                <span>{item.label}</span>
+                {typeof item.count === 'number' && (
+                  <span className="text-[10px] opacity-75">({item.count})</span>
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
     </header>

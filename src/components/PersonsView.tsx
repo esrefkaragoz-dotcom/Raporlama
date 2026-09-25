@@ -75,54 +75,57 @@ export const PersonsView: React.FC<PersonsViewProps> = ({
   };
 
   return (
-    <div className="space-y-6">
-      {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
-        <div>
-          <h1 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <Users className="w-6 h-6 text-blue-600" />
-            Personel & Üstlenilen Görev Tanımları
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Her personelin üstlendiği resmi görevleri, şirket atamalarını ve hedeflerini yönetin.
-          </p>
+    <div className="space-y-4">
+      {/* Streamlined Header & Filter Toolbar */}
+      <div className="bg-white dark:bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+        {/* Left: Title & Count */}
+        <div className="flex items-center space-x-3 shrink-0">
+          <div className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/50">
+            <Users className="w-5 h-5" />
+          </div>
+          <div>
+            <h1 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              Personel & Görev Tanımları
+            </h1>
+            <p className="text-xs text-slate-500">
+              {filteredPersons.length} personel kayıtlı &bull; Resmi görevler ve şirket atamaları
+            </p>
+          </div>
         </div>
 
-        <div className="flex items-center space-x-2">
+        {/* Right: Quick Search, Department Filter & Add Button */}
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
+          <div className="relative flex-1 sm:w-60">
+            <Search className="w-4 h-4 absolute left-3 top-2.5 text-slate-400" />
+            <input
+              type="text"
+              placeholder="Personel veya görev ara..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-slate-100 placeholder-slate-400"
+            />
+          </div>
+
+          <select
+            value={selectedDept}
+            onChange={(e) => setSelectedDept(e.target.value)}
+            className="px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
+          >
+            {departments.map((dept) => (
+              <option key={dept} value={dept}>
+                {dept === 'all' ? 'Tüm Birimler' : dept}
+              </option>
+            ))}
+          </select>
+
           <button
             onClick={onAddNewPerson}
-            className="flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold shadow transition-all"
+            className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all shrink-0 cursor-pointer"
           >
-            <Plus className="w-4 h-4" />
-            <span>Yeni Personel Ekle</span>
+            <Plus className="w-3.5 h-3.5" />
+            <span>Yeni Personel</span>
           </button>
         </div>
-      </div>
-
-      {/* Filter Bar */}
-      <div className="flex flex-col sm:flex-row gap-3">
-        <div className="relative flex-1">
-          <Search className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
-          <input
-            type="text"
-            placeholder="Personel adı, unvan, görev tanımı veya şirket ara..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-slate-100 placeholder-slate-400"
-          />
-        </div>
-
-        <select
-          value={selectedDept}
-          onChange={(e) => setSelectedDept(e.target.value)}
-          className="px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          {departments.map((dept) => (
-            <option key={dept} value={dept}>
-              {dept === 'all' ? 'Tüm Birimler' : dept}
-            </option>
-          ))}
-        </select>
       </div>
 
       {/* Persons Cards Grid */}

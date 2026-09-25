@@ -67,44 +67,40 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   };
 
   return (
-    <div className="space-y-6">
-      {/* Top Banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-900 text-white p-6 sm:p-8 shadow-xl border border-indigo-900/40">
+    <div className="space-y-5">
+      {/* Sleek Top Banner */}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white p-5 sm:p-6 shadow-md border border-slate-800">
         <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-3 border border-blue-400/30">
+          <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-2.5 border border-blue-400/20">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span>Gemini 3.8 Flash AI Entegreli Yönetim Paneli</span>
+            <span>Gemini 3.8 Flash AI Yönetim Paneli</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
             MESAM Personel Görev & Rapor Analiz Merkezi
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-slate-300 leading-relaxed">
-            Dışarıdan ve personelden gelen günlük iş raporlarını inceleyin, personelin üstlendiği görev tanımları ile
-            fiili üretimini karşılaştırın. Gemini AI ile rol uyumu, iş yükü dengesi ve darboğazları tespit edin.
+          <p className="mt-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Dışarıdan gelen günlük iş raporlarını inceleyin, personelin üstlendiği görev tanımları ile fiili üretimini karşılaştırın.
           </p>
 
-          <div className="mt-5 flex flex-wrap items-center gap-3">
+          <div className="mt-4 flex flex-wrap items-center gap-2.5">
             <button
               onClick={handleGenerateQuickSummary}
               disabled={quickAiLoading}
-              className="flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-sm font-semibold shadow-lg shadow-blue-500/25 transition-all disabled:opacity-50"
+              className="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold shadow transition-all disabled:opacity-50 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-amber-300" />
-              <span>{quickAiLoading ? 'AI Analiz Hazırlanıyor...' : 'AI Ekip Raporu Üret'}</span>
+              <span>{quickAiLoading ? 'Analiz Hazırlanıyor...' : 'AI Ekip Raporu Üret'}</span>
             </button>
 
             <button
               onClick={() => onNavigateTab('ai-analysis')}
-              className="flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-sm font-medium border border-slate-700/80 transition-all"
+              className="flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-medium border border-slate-700 transition-all cursor-pointer"
             >
               <span>Detaylı Görev Uyum Analizleri</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
-
-        {/* Subtle decorative background graphic */}
-        <div className="absolute right-0 top-0 -mt-10 -mr-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
       </div>
 
       {aiError && (
